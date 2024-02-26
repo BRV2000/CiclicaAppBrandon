@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.InsertarCicloMenstrual"
+             xmlns:Models="clr-namespace:Frontend.Models"
+              BackgroundColor="#FBC5CA">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto"
+              Margin="10">
+            <Grid Grid.Row="0"
+                  WidthRequest="60"
+                  HeightRequest="60"
+                  BackgroundColor="Transparent"
+                  HorizontalOptions="Start"
+                  Margin="-5,15,5,5">
+                <Button 
+                    x:Name="BTN_RegresarDeIngresarCicloMenstrual"
+                    Clicked="BTN_RegresarDeIngresarCicloMenstrual_Clicked"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    FontFamily="FontAwesome6" 
+                    Text="{x:Static Models:Icons.ArrowLeft}"
+                    FontSize="36"
+                    TextColor="#f4d7dc"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    Margin="0,0,0,0"
+                    BackgroundColor="Transparent">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                                 Radius="10"
+                                 Opacity="1"
+                                 Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   Margin="10"
+                  >
+                <Label Text="Registro ciclo menstrual"   
+                         FontSize="28"
+                         FontAttributes="Bold"
+                         FontFamily="Verah"
+                         TextColor="#B01D2E"
+                         HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="2"
+                  Margin="10">
+                <Border StrokeShape="RoundRectangle 25"
+                        WidthRequest="350"
+                        HeightRequest="140"
+                        BackgroundColor="#F4D7DC">
+                    <Grid RowDefinitions="auto,auto,auto">
+                        <Label Grid.Row="0"
+                              Text="Fecha inicio ciclo:"
+                              TextColor="#B01D2E"
+                              Margin="20,20,0,0"
+                              HorizontalOptions="Start"
+                              HeightRequest="20"
+                              WidthRequest="155"
+                              FontFamily="Verah"
+                              FontAttributes="Bold"
+                              FontSize="16"
+                               />
+                        <Frame Grid.Row="1"
+                               BorderColor="#B01D2E"
+                               Margin="10,10,0,0"
+                               HeightRequest="40"
+                               HorizontalOptions="Start"
+                               WidthRequest="325"
+                               BackgroundColor="Transparent">
+                            <DatePicker 
+                                    Format="dd/MM/yyyy"
+                                    Margin="-10,0,0,0"
+                                    HorizontalOptions="Start"
+                                    TextColor="#B01D2E"
+                                    HeightRequest="400"
+                                    FontAttributes="Bold"
+                                    x:Name="fechaCicloMenstrual"
+                                    WidthRequest="310"/>
+                        </Frame>
+                        <Label Grid.Row="2"
+                                Text="DD/MM/YYY"
+                                TextColor="#B01D2E"
+                                Margin="20,3,0,0"
+                                HorizontalOptions="Start"
+                                HeightRequest="20"
+                                WidthRequest="155"
+                                FontFamily="Verah"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                />
+
+                    </Grid>
+                    <Border.Shadow>
+                        <Shadow Offset="1,5"
+                                Brush="gray"/>
+                    </Border.Shadow>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Border StrokeShape="RoundRectangle 25"
+                        WidthRequest="350"
+                        HeightRequest="320"
+                        BackgroundColor="#F4D7DC">
+                    <Grid>
+                        <StackLayout HeightRequest="320"
+                                     WidthRequest="340"
+                                     Margin="05"
+                                     VerticalOptions="Start">
+                            <Grid RowDefinitions="auto,auto" >
+                                 
+                                <Grid Grid.Row="0"
+                                      RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                            Text="Duración del Ciclo:"
+                                            TextColor="#B01D2E"
+                                            Margin="20,30,0,0"
+                                            HorizontalOptions="Start"
+                                            HeightRequest="20"
+                                            WidthRequest="155"
+                                            FontFamily="Verah"
+                                            FontAttributes="Bold"
+                                            FontSize="16"/>
+                                    <Frame Grid.Row="1"
+                                           BorderColor="#B01D2E"
+                                           BackgroundColor="Transparent"
+                                           HeightRequest="65"
+                                           WidthRequest="326"
+                                           Margin="10">
+                                        <Entry 
+                                            HeightRequest="50"
+                                            WidthRequest="300"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center"
+                                            Margin="0,10,0,0"
+                                            Placeholder="Digite la cantidad de dias"
+                                            PlaceholderColor="#B01D2E"
+                                            TextColor="#B01D2E"
+                                            x:Name="DuracioDelCiclo"
+                                            Keyboard="Numeric"
+                                           MaxLength="2"/>
+                                    </Frame>
+                                </Grid>
+                                <Grid Grid.Row="1" 
+                                    RowDefinitions="auto, auto"
+                                      Margin="10">
+                                    <Label Grid.Row="0"
+                                            Text="Duración del sangrado menstrual:"
+                                            TextColor="#B01D2E"
+                                            Margin="10,10,0,0"
+                                            HorizontalOptions="Start"
+                                            HeightRequest="20"
+                                            WidthRequest="300"
+                                            FontFamily="Verah"
+                                            FontAttributes="Bold"
+                                            FontSize="16"/>
+                                  <Frame Grid.Row="1"
+                                         BorderColor="#B01D2E"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="65"
+                                        WidthRequest="326"
+                                        Margin="10">
+                                        <Entry  HeightRequest="50"
+                                                 WidthRequest="300"
+                                                 VerticalOptions="Center"
+                                                 HorizontalOptions="Center"
+                                                 Margin="0,10,0,0"
+                                                 Placeholder="Digite la cantidad de dias"
+                                                 PlaceholderColor="#B01D2E"
+                                                 TextColor="#B01D2E"
+                                                 x:Name="DuracioDelaMenstruacion"
+                                                 Keyboard="Numeric"
+                                                MaxLength="2"/>
+                                  </Frame>
+
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                    <Border.Shadow>
+                        <Shadow Offset="1,5"
+                                Brush="gray"/>
+                    </Border.Shadow>
+
+                </Border>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Button 
+                    Margin="45"
+                        x:Name="Btn_IngresarCicloMenstrual"
+                        Clicked="Btn_IngresarCicloMenstrual_Clicked"
+                         FontAttributes="Bold"
+                         FontFamily="Verah"
+                         Text="GUARDAR"
+                    TextColor="#f4d7dc"
+                         VerticalOptions="Center" 
+                         CornerRadius="20" 
+                         BackgroundColor="#b01d2e"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

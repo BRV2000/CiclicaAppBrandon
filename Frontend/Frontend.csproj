@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Frontend</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>Ciclica</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.frontend</ApplicationId>
+		<ApplicationIdGuid>82fe5a92-0155-49d1-973b-d12fbd44c350</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\Images\logo_vag_red2.png" ForegroundFile="Resources\Images\logo_vag_red2.png" Color="#e58c8c" />
+		
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Images\logo_ciclica2.png" Color="#e58c8c" BaseSide="200" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\logo_ciclica2.png" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Platforms\Android\Resources\XML\network_security_config.xml" />
+	  <None Remove="Resources\Fonts\fa-brands-400.ttf" />
+	  <None Remove="Resources\Fonts\fa-solid-900.ttf" />
+	  <None Remove="Resources\Fonts\Verahbi_.ttf" />
+	  <None Remove="Resources\Fonts\Verahb__.ttf" />
+	  <None Remove="Resources\Fonts\Verahi__.ttf" />
+	  <None Remove="Resources\Fonts\Verah___.ttf" />
+	  <None Remove="Resources\Fonts\windows_command_prompt.ttf" />
+	  <None Remove="Resources\Images\anillo.png" />
+	  <None Remove="Resources\Images\aprendizaje.PNG" />
+	  <None Remove="Resources\Images\bolsa_de_algodon.PNG" />
+	  <None Remove="Resources\Images\calendario.png" />
+	  <None Remove="Resources\Images\calzonmestrual.PNG" />
+	  <None Remove="Resources\Images\calzon_mestrual.PNG" />
+	  <None Remove="Resources\Images\copamestrualciclica.PNG" />
+	  <None Remove="Resources\Images\copa_menstrual.PNG" />
+	  <None Remove="Resources\Images\diu.png" />
+	  <None Remove="Resources\Images\ebook_descubriendo_el_ciclo_menstrual.PNG" />
+	  <None Remove="Resources\Images\ebook_educacion_sexual_integral_esi_en_casa.PNG" />
+	  <None Remove="Resources\Images\envase_de_silicon_para_esterilizar.PNG" />
+	  <None Remove="Resources\Images\esterilizador_a_vapor_premium.PNG" />
+	  <None Remove="Resources\Images\implante.png" />
+	  <None Remove="Resources\Images\inyeccion.png" />
+	  <None Remove="Resources\Images\jabon_de_ropa_intima.PNG" />
+	  <None Remove="Resources\Images\logored.png" />
+	  <None Remove="Resources\Images\logo_ciclica.jpg" />
+	  <None Remove="Resources\Images\logo_ciclica2.png" />
+	  <None Remove="Resources\Images\logo_vag_red.png" />
+	  <None Remove="Resources\Images\logo_vag_red2.png" />
+	  <None Remove="Resources\Images\lubricante_ciclica.PNG" />
+	  <None Remove="Resources\Images\menopausia.PNG" />
+	  <None Remove="Resources\Images\mestruacion.PNG" />
+	  <None Remove="Resources\Images\parche.png" />
+	  <None Remove="Resources\Images\pastillas_anticonceptivas.png" />
+	  <None Remove="Resources\Images\postparto.PNG" />
+	  <None Remove="Resources\Images\tienda.png" />
+	  <None Remove="Resources\Images\tiendanav.png" />
+	  <None Remove="Resources\Images\toallaflujoabundante.PNG" />
+	  <None Remove="Resources\Images\toalla_flujo_abundante.PNG" />
+	  <None Remove="Resources\Images\usuario.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="FontAwesome6.Fonts" Version="2.5.1" />
+		<PackageReference Include="Google.Apis.Admin.Directory.directory_v1" Version="1.63.0.3225" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Plugin.LocalNotification" Version="10.1.8" />
+		<PackageReference Include="SimpleToolkit.Core" Version="3.0.0" />
+		<PackageReference Include="SimpleToolkit.SimpleShell" Version="3.0.1" />
+		<PackageReference Include="Syncfusion.Maui.Calendar" Version="23.1.43" />
+		<PackageReference Include="Syncfusion.Maui.Scheduler" Version="23.1.43" />
+		<PackageReference Include="System.Globalization.Calendars" Version="4.3.0" />
+		<PackageReference Include="XCalendar.Maui" Version="4.5.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Controles\TabBarIconView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controles\TabBarView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\AnticoncepFechaYHora.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\CatalogoProductos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\DescripcionProducto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\LogCiclica.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\MetodosAnticonceptivos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\PagHistorialAnticoncep.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\PagObtenerElMetodoAnticoncepEnUso.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\PerfilUsuario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\RegCiclica.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\TiendaCiclica.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Paginas\VistaPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

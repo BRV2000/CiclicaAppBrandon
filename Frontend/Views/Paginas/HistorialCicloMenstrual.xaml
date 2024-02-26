@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.HistorialCicloMenstrual"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             BackgroundColor="#FBC5CA" >
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto"
+                Margin="10" >
+             
+            <Grid Grid.Row="0"
+                  WidthRequest="60"
+                  HeightRequest="60"
+                  BackgroundColor="Transparent"
+                  HorizontalOptions="Start"
+                  Margin="-5,15,5,5">
+                <Button 
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    x:Name="BTN_RegresarDeHistorialCicloMenstrual"
+                    Clicked="BTN_RegresarDeHistorialCicloMenstrual_Clicked"
+                    FontFamily="FontAwesome6" 
+                    Text="{x:Static Models:Icons.ArrowLeft}"
+                    FontSize="36"
+                    TextColor="#f4d7dc"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    
+                    BackgroundColor="Transparent">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                                 Radius="10"
+                                 Opacity="1"
+                                 Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                  HeightRequest="100"
+                  WidthRequest="300"
+                  BackgroundColor="Transparent">
+                <Label Text="Historial de ciclos menstruales"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           FontFamily="Verah"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="#B01D2E"/>
+            </Grid>
+            <CollectionView Grid.Row="2"
+                          HeightRequest="620"
+                          WidthRequest="350"
+                          Margin="10"
+                          x:Name="DatosDelCicloMenstrual"
+                          ItemsSource="{Binding historialCiclomenstrual }">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ScrollView HeightRequest="150"
+                            WidthRequest="350"
+                            BackgroundColor="Transparent">
+                            
+                                <Border StrokeShape="RoundRectangle 25"
+                                        WidthRequest="350"
+                                        HeightRequest="140"
+                                        VerticalOptions="Start"
+                                        BackgroundColor="#F4D7DC"
+                                        Margin="0,0,0,0">
+                                    <Grid RowDefinitions="auto,auto,auto"
+                                            ColumnDefinitions="auto,auto">
+
+                                        <Label Grid.Row="0"
+                                           Text="Fecha inicio ciclo:"
+                                            TextColor="#B01D2E"
+                                           Margin="10,10,0,0"
+                                           HeightRequest="20"
+                                           WidthRequest="155"
+                                           FontFamily="Verah"
+                                           FontAttributes="Bold"
+                                           FontSize="16"/>
+                                        <Label Grid.Row="1"
+                                               Text="Duracion ciclo:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="2"
+                                               Text="Duracion sangrado:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+
+                                        <Label Grid.Column="1"
+                                              
+                                               x:Name="FechaInicioCiclo"
+                                               Text="{Binding FechaInicioCiclo, StringFormat='{0:dd/MMM/yyyy}'}"
+                                               TextColor="#B01D2E"
+                                               BackgroundColor="Transparent"
+                                               Margin="0,10,0,0"
+                                               HorizontalTextAlignment="End"
+                                               VerticalTextAlignment="Center"
+                                               HeightRequest="50"
+                                               WidthRequest="120"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Column="1"
+                                               Grid.Row="1"
+                                               Text="{Binding DuracionCiclo}"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Center"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Column="1"
+                                               Grid.Row="2"
+                                               Text="{Binding DuracionMenstruacion}"
+                                                TextColor="#B01D2E"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                    </Grid>
+
+                                    <Border.Shadow>
+                                        <Shadow  
+                                            Brush="gray"
+                                            Radius="5"
+                                            Opacity="1"
+                                            Offset="1,5"/>
+                                    </Border.Shadow>
+                                </Border>
+                            </ScrollView>
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

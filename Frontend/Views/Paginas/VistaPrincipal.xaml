@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Models="clr-namespace:Frontend.Models"
+             xmlns:simpleCore="clr-namespace:SimpleToolkit.Core;assembly=SimpleToolkit.Core"
+             x:Class="Frontend.Views.VistaPrincipal"
+             xmlns:c="clr-namespace:Frontend.Views.Controles"
+             x:Name="this"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#f4d7dc">
+
+    <NavigationPage.HasNavigationBar>
+        <OnIdiom x:TypeArguments="x:Boolean">
+            <OnIdiom.Phone>true</OnIdiom.Phone>
+            <OnIdiom.Tablet>false</OnIdiom.Tablet>
+        </OnIdiom>
+    </NavigationPage.HasNavigationBar>
+
+    <Grid RowDefinitions=".4*,.6*">
+        <Border
+            HeightRequest="50"
+            WidthRequest="60"
+            HorizontalOptions="End"
+            StrokeShape="RoundRectangle 55"
+            Margin="0,0,10,230">
+                <Border.Shadow>
+                <Shadow
+                    Brush="gray"
+                    Radius="10"
+                    Opacity="1"
+                    Offset="5,5"/>
+            </Border.Shadow>
+            <Button
+                BackgroundColor="#e58c8c"
+                WidthRequest="60"
+                HeightRequest="50"
+                CornerRadius="55"
+                x:Name="BTN_HistorialCicloMenstual"
+                Clicked="BTN_HistorialCicloMenstual_Clicked"/>
+        </Border>
+        <Border
+             BackgroundColor="#b01d2e"
+             HeightRequest="40"
+             WidthRequest="40"
+             StrokeShape="RoundRectangle 55"
+             HorizontalOptions="End"
+             Margin="0,0,20,230">
+            <Label
+                 FontFamily="FontAwesome6" 
+                 Text="{x:Static Models:Icons.ClockRotateLeft}"
+                 FontSize="22"
+                 Margin="8,8,0,0"
+                 TextColor="#fbc5ca"/>
+        </Border>
+        <Grid Margin="0,0,0,-150" Grid.Row="0">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Border BackgroundColor="#e58c8c"
+                       HeightRequest="200"
+                       HorizontalOptions="Start"
+                       WidthRequest="410"
+                       StrokeShape="RoundRectangle 35"
+                       Margin="0,0,0,60">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="darkred"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="5,5"/>
+                    </Border.Shadow>
+                    <StackLayout HorizontalOptions="Center"
+                                 Margin="5,25,5,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" FontAttributes="Bold" Text="{Binding Source={x:Reference this}, Path=SelectedDate, StringFormat='{0: MMM dd yyyy}'}"
+                               TextColor="#b01d2e"
+                               FontSize="20"/>
+                            <HorizontalStackLayout Grid.Column="1" Spacing="20" HorizontalOptions="End">
+                                <Label
+                                    FontFamily="FontAwesome6" 
+                                    Text="{x:Static Models:Icons.AngleLeft}"
+                                    FontSize="25"
+                                    HeightRequest="25"
+                                    WidthRequest="25"
+                                    TextColor="#b01d2e">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=PreviousMonthCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label
+                                    FontFamily="FontAwesome6" 
+                                    Text="{x:Static Models:Icons.AngleRight}"
+                                    FontSize="25"
+                                    HeightRequest="25"
+                                    WidthRequest="25"
+                                    TextColor="#b01d2e">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=NextMonthCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </Grid>
+                        <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path= Dates}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="Models:CalendarModel">
+                                    <Border WidthRequest="95" 
+                                        HeightRequest="95" 
+                                        StrokeShape="RoundRectangle 25" 
+                                        Padding="10"
+                                        BackgroundColor="#FBC5CA">
+                                        <Border.Shadow>
+                                            <Shadow
+                                         Brush="Gray"
+                                         Radius="3"
+                                         Opacity="1"
+                                         Offset="1, 5"/>
+                                        </Border.Shadow>
+                                        <VerticalStackLayout>
+                                            <Label Text="{Binding Date, StringFormat='{0:ddd}'}" 
+                                               FontSize="18" 
+                                               TextColor="#b01d2e"
+                                               HorizontalTextAlignment="Center">
+                                                <Label.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding IsCurrentDate}" Value="True">
+                                                        <Setter Property="TextColor" Value="#f4d7dc"/>
+                                                    </DataTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                            <Label Text="{Binding Date, StringFormat='{0:dd}'}" 
+                                               FontSize="20" 
+                                               TextColor="#b01d2e"
+                                               FontAttributes="Bold"
+                                               HorizontalTextAlignment="Center">
+                                                <Label.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding IsCurrentDate}" Value="True">
+                                                        <Setter Property="TextColor" Value="#f4d7dc"/>
+                                                    </DataTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                        </VerticalStackLayout>
+                                        <Border.Triggers>
+                                            <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="true">
+                                                <Setter Property="BackgroundColor" Value="#b01d2e"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="false">
+                                                <Setter Property="BackgroundColor" Value="#FBC5CA"/>
+                                            </DataTrigger>
+                                        </Border.Triggers>
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path= CurrentDateCommand}" CommandParameter="{Binding .}"/>
+                                        </Border.GestureRecognizers>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+        <CollectionView BackgroundColor="Transparent"
+                        HeightRequest="220"
+                        WidthRequest="350"
+                        HorizontalOptions="End"
+                        Margin="0,180,0,0"
+                        x:Name="PestañaConsejos"
+                        ItemsSource="{Binding consejosMostrar}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 25,0,25,0"
+                            WidthRequest="350"
+                            HeightRequest="220"
+                            HorizontalOptions="End"
+                            BackgroundColor="#FBC5CA"
+                            Margin="0,0,0,0">
+                        <Grid RowDefinitions="auto,auto">
+                            <VerticalStackLayout Grid.Row="0" Margin="-50,20,0,0">
+                                <Frame WidthRequest="345"
+                                       HeightRequest="140"
+                                       HorizontalOptions="End"
+                                       Margin="10,-10,0,0"
+                                       BorderColor="Transparent"
+                                       BackgroundColor="#FBC5CA">
+                                    <Label Text="{Binding Consj_Consejo}"
+                               TextColor="#b01d2e"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               FontFamily="Verah"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                                </Frame>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="1">
+                                <Button Text="Aceptar"
+                            FontAttributes="Bold"
+                            TextColor="#F4D7DC"
+                            FontSize="18"
+                            HeightRequest="50"
+                            WidthRequest="120"
+                            CornerRadius="25"
+                            BackgroundColor="#b01d2e"
+                            Margin="5"
+                            x:Name="BTN_CerrarPestaña"
+                            Clicked="BTN_CerrarPestaña_Clicked">
+                                </Button>
+                            </VerticalStackLayout>
+                        </Grid>
+                        <Border.Shadow>
+                            <Shadow  
+                                Brush="gray"
+                                Radius="5"
+                                Opacity="1"
+                                Offset="1,5"/>
+                        </Border.Shadow>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid Grid.Row="1" Margin="0,70,0,0">
+            <VerticalStackLayout>
+                <BoxView                    
+                     HeightRequest="450"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     WidthRequest="397"
+                     CornerRadius="55,55,0,0"
+                     Color="#fbc5ca">
+                 
+                </BoxView>
+                <Border 
+                    Grid.Row="1"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    StrokeShape="RoundRectangle 55"
+                    Margin="20,-420">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="gray"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="5,5"/>
+                    </Border.Shadow>
+                    <Button
+                        BackgroundColor="#f4d7dc"
+                        WidthRequest="300"
+                        HeightRequest="70"
+                        CornerRadius="55"
+                        x:Name="BTN_RegistroDiario"
+                        Clicked="BTN_RegistroDiario_Clicked_1"
+                        Text="Biomarcadores"
+                        FontFamily="Verah"
+                        FontSize="20"
+                        TextColor="#b01d2e"/>
+                </Border>
+                <Border 
+                    Grid.Row="1"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    StrokeShape="RoundRectangle 55"
+                    Margin="0,440,0,10">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="gray"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="5,5"/>
+                    </Border.Shadow>
+                    <Button
+                        BackgroundColor="#f4d7dc"
+                        WidthRequest="300"
+                        HeightRequest="70"
+                        CornerRadius="55"
+                        x:Name="BTN_RegistroCiclo"
+                        Clicked="BTN_RegistroCiclo_Clicked"
+                        Text="Registra tu ciclo"
+                        FontFamily="Verah"
+                        FontSize="20"
+                        TextColor="#b01d2e"/>
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    StrokeShape="RoundRectangle 55"
+                    Margin="0,10,0,0">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="gray"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="5,5"/>
+                    </Border.Shadow>
+
+                    <Button
+                        BackgroundColor="#f4d7dc"
+                        WidthRequest="300"
+                        HeightRequest="70"
+                        CornerRadius="55"
+                        x:Name="BTN_SaludSexual"
+                        Clicked="BTN_SaludSexual_Clicked"
+                        Text="Tu salud sexual"
+                        FontFamily="Verah"
+                        FontSize="20"
+                        TextColor="#b01d2e"/>
+                </Border>
+                <VerticalStackLayout>
+                    <Border
+                         Grid.Row="1"
+                         BackgroundColor="#b01d2e"
+                         HeightRequest="55"
+                         WidthRequest="55"
+                         StrokeShape="RoundRectangle 55"
+                         HorizontalOptions="Start"
+                         Margin="65,-242,20,20">
+                        <Label
+                        FontFamily="FontAwesome6" 
+                        Text="{x:Static Models:Icons.CalendarDays}"
+                        FontSize="25"
+                        Margin="15,13,0,0"
+                        TextColor="#fbc5ca"/>
+                    </Border>
+                    <Border
+                         Grid.Row="1"
+                         BackgroundColor="#b01d2e"
+                         HeightRequest="55"
+                         WidthRequest="55"
+                         StrokeShape="RoundRectangle 55"
+                         HorizontalOptions="Start"
+                        Margin="65,15,0,0">
+                        <Label
+                        FontFamily="FontAwesome6" 
+                        Text="{x:Static Models:Icons.Droplet}"
+                        FontSize="25"
+                        Margin="16,13,0,0"
+                        TextColor="#fbc5ca"/>
+                    </Border>
+                    <Border
+                         Grid.Row="1"
+                         BackgroundColor="#b01d2e"
+                         HeightRequest="55"
+                         WidthRequest="55"
+                         StrokeShape="RoundRectangle 55"
+                         HorizontalOptions="Start"
+                         Margin="65,34,0,0">
+                        <Label
+                        FontFamily="FontAwesome6" 
+                        Text="{x:Static Models:Icons.Heart}"
+                        FontSize="25"
+                        Margin="14,15,0,0"
+                        TextColor="#fbc5ca"/>
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

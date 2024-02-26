@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net7.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Frontend
+build_property.ProjectDir = C:\Users\sebas\OneDrive\Escritorio\PES CICLICA\ProyectoCiclica\Frontend\
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Controles/TabBarIconView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Controles.TabBarIconView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Controles\TabBarIconView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Controles\TabBarIconView.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Controles/TabBarView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Controles.TabBarView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Controles\TabBarView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Controles\TabBarView.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Paginas/LogCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.LogCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\LogCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\LogCiclica.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Paginas/PerfilUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.PerfilUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\PerfilUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\PerfilUsuario.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Paginas/RegCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.RegCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\RegCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\RegCiclica.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Paginas/TiendaCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.TiendaCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\TiendaCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\TiendaCiclica.xaml
+
+[C:/Users/sebas/OneDrive/Escritorio/PES CICLICA/ProyectoCiclica/Frontend/Views/Paginas/VistaPrincipal.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.VistaPrincipal.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\VistaPrincipal.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\VistaPrincipal.xaml

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.CatalogoProductos"
+             xmlns:local="clr-namespace:Frontend.Views.Paginas"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             BackgroundColor="#F4D7DC">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto, auto">
+            <Grid HeightRequest="60"
+                  WidthRequest="60"
+                  Grid.Row="0"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start"
+                  Margin="10,40,0,0"
+                  Background="Transparent">
+                <Button 
+                     x:Name="BTN_RegresarCategoriaProdutos"
+                     Clicked="BTN_RegresarCategoriaProdutos_Clicked"
+                     WidthRequest="60"
+                     HeightRequest="60"
+                     FontFamily="FontAwesome6" 
+                     Text="{x:Static Models:Icons.ArrowLeft}"
+                     FontSize="36"
+                     TextColor="#f4d7dc"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Start"
+                     Margin="0,0,0,0"
+                     BackgroundColor="Transparent">
+                    <Button.Shadow>
+                    <Shadow Brush="gray"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                  WidthRequest="350"
+                  HeightRequest="100"
+                  Margin="0">
+                <Label Text="Catalogo de Productos Cíclica"
+                       FontSize="35"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#b01d2e"
+                       FontAttributes="Bold,Italic"
+                       FontFamily="Verah"/>
+            </Grid>
+            <!--Filtros-->
+            <Grid Grid.Row="2"
+                  WidthRequest="350"
+                  HeightRequest="100"
+                  Margin="0">
+                <Grid ColumnDefinitions="auto,auto"
+          Margin="30">
+                    <Button Grid.Column="0"
+                            HeightRequest="40"
+                            WidthRequest="100"
+                            Margin="30,0,0,0"
+                            Text="Precio"
+                            FontSize="18"
+                            TextColor="#b01d2e"
+                            FontAttributes="Bold"
+                            FontFamily="Verah"
+                            BackgroundColor="#FBC5CA">
+                        <Button.Shadow>
+                            <Shadow Brush="gray"
+                                    Radius="15"
+                                    Opacity="1"
+                                    Offset="0,6"/>
+                        </Button.Shadow>
+                    </Button>
+                    <Button Grid.Column="1"
+                            HeightRequest="40"
+                            WidthRequest="100"
+                            Margin="30,0,0,0"
+                            Text="Color"
+                            FontSize="18"
+                            TextColor="#b01d2e"
+                            FontAttributes="Bold"
+                            FontFamily="Verah"
+                            BackgroundColor="#FBC5CA">
+                        <Button.Shadow>
+                            <Shadow Brush="gray"
+                                    Radius="15"
+                                    Opacity="1"
+                                    Offset="0,6"/>
+                        </Button.Shadow>
+                    </Button>
+                </Grid>
+            </Grid>
+            <!--Lista del Historial-->
+                <CollectionView Grid.Row="3"
+                                Margin="0"
+                                WidthRequest="350"
+                                HeightRequest="500"
+                                x:Name="DatosProductosPorCategoria"
+                                ItemsSource="{Binding ListaProductos}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Grid.Row="3" 
+                                    StrokeShape="RoundRectangle 18"
+                                    WidthRequest="350"
+                                    HeightRequest="130"
+                                    VerticalOptions="Start"
+                                    Margin="0,0,0,20">
+                            <!--Vista Productos-->
+                            <Grid Grid.Row="1" RowDefinitions="auto,auto"
+                               Margin="0"
+                               RowSpacing="100"
+                               ColumnDefinitions="auto,auto"
+                               ColumnSpacing="150">
+                                <!--Productos-->
+                                <Grid Grid.Row="0"
+                                      WidthRequest="350"
+                                      HeightRequest="130"
+                                      BackgroundColor="#FBC5CA">
+                                    <Label Text="{Binding nombre}"
+                                           TextColor="Black"
+                                           FontSize="13"
+                                           FontFamily="Verah"
+                                           FontAttributes="Bold"
+                                           WidthRequest="212"
+                                           HeightRequest="90"
+                                           VerticalTextAlignment="Start"
+                                           HorizontalTextAlignment="Start"
+                                           Margin="100,0,0,0"/>
+                                    <Label Text="{Binding precio, StringFormat='₡{0:F2}'}"
+                                           TextColor="Black"
+                                           FontSize="13"
+                                           FontFamily="Verah"
+                                           FontAttributes="Bold"
+                                           WidthRequest="212"
+                                           HeightRequest="90"
+                                           VerticalTextAlignment="End"
+                                           HorizontalTextAlignment="Start"
+                                           Margin="100,0,0,0"/>
+                                    <Image Source="{Binding RutaImagen}"
+                                           WidthRequest="100"
+                                           HeightRequest="100"
+                                           Margin="-220,0,0,0">
+                                    </Image>
+                                    <Button HeightRequest="34" WidthRequest="100"
+                                            CornerRadius="10"
+                                            Margin="210,75,0,0"
+                                            Text="Añadir"
+                                            FontSize="13"
+                                            TextColor="White"
+                                            BackgroundColor="#b01d2e"
+                                            FontAttributes="Bold"
+                                            FontFamily="Verah"
+                                            x:Name="BTN_DescripionProducto">
+                                        <Button.Shadow>
+                                            <Shadow Brush="gray"
+                                                    Radius="15"
+                                                    Opacity="1"
+                                                    Offset="0,6"/>          
+                                        </Button.Shadow>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.LogCiclica"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#f4d7dc">
+    
+    <NavigationPage.HasNavigationBar>
+        <OnIdiom x:TypeArguments="x:Boolean">
+            <OnIdiom.Phone>true</OnIdiom.Phone>
+            <OnIdiom.Tablet>false</OnIdiom.Tablet>
+        </OnIdiom>
+    </NavigationPage.HasNavigationBar>
+
+    <VerticalStackLayout 
+        Spacing="20"
+        Padding="30.0"
+        VerticalOptions="Center">
+        <Image Source="logored.png" HeightRequest="200" WidthRequest="250" />
+
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Bienvenida a tu cuenta" FontSize="28" TextColor="#b01d2e" HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+        <StackLayout>
+            <Entry x:Name="LoginCorreo"
+                Placeholder="Correo" 
+                   TextColor="#b01d2e"
+                   PlaceholderColor="#E58C8C" 
+                   VerticalOptions="Center" 
+                   Keyboard="Email">
+            </Entry>
+        </StackLayout>
+        <StackLayout>
+            <Entry x:Name="LoginContraseña"
+                Placeholder="Contraseña" 
+                TextColor="#b01d2e"
+                PlaceholderColor="#E58C8C"
+                VerticalOptions="Center"
+                IsPassword="True">
+            </Entry>
+        </StackLayout>
+        
+        <Button 
+            x:Name="Btn_Ingresar"
+            Clicked="Btn_Ingresar_Clicked"   
+            Text="Ingresar" 
+            VerticalOptions="Center" 
+            WidthRequest="350"
+            TextColor="#F4D7DC"
+            FontAttributes="Bold"
+            FontSize="16"
+            CornerRadius="20" 
+            BackgroundColor="#b01d2e"/>
+
+        <StackLayout Orientation="Vertical" Margin="0,150,0,0">
+            <Label Text="¿Aún no tienes cuenta?" TextColor="#E58C8C" HorizontalOptions="Center" 
+                   FontAttributes="Bold"
+                   Margin="0,2,0,0"/>
+            <Button x:Name="BtnRegistrar" 
+                    Clicked="BtnRegistrar_Clicked"
+                    Text="Registrar" 
+                    TextColor="#b01d2e" 
+                    BackgroundColor="#fbc5ca" 
+                    FontAttributes="Bold" 
+                    CornerRadius="20" 
+                    Margin="0,2,0,0"
+                    WidthRequest="200"/>
+        </StackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

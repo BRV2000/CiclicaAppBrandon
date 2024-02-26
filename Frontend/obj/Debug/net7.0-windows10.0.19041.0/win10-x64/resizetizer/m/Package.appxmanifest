@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap">
+  <Identity Name="82fe5a92-0155-49d1-973b-d12fbd44c350" Publisher="CN=User Name" Version="1.0.0.1" />
+  <mp:PhoneIdentity PhoneProductId="38053C6B-EAF6-463E-973B-4E34262F4698" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Ciclica</DisplayName>
+    <PublisherDisplayName>User Name</PublisherDisplayName>
+    <Logo>logo_vag_red2StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements DisplayName="Ciclica" Description="Ciclica" Square150x150Logo="logo_vag_red2MediumTile.png" Square44x44Logo="logo_vag_red2Logo.png" BackgroundColor="transparent">
+        <uap:DefaultTile Square71x71Logo="logo_vag_red2SmallTile.png" Wide310x150Logo="logo_vag_red2WideTile.png" Square310x310Logo="logo_vag_red2LargeTile.png" ShortName="Ciclica">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="logo_ciclica2SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

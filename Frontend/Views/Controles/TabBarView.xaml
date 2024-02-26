@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Controles.TabBarView"
+             xmlns:simpleCore="clr-namespace:SimpleToolkit.Core;assembly=SimpleToolkit.Core"
+             xmlns:c="clr-namespace:Frontend.Views.Controles"
+             InputTransparent="False">
+    
+    <ContentView.Resources>
+        <x:Double x:Key="ViewHeight">80</x:Double>
+        <Style TargetType="{x:Type c:TabBarIconView}">
+            <Setter Property="HeightRequest" Value="30"/>
+            <Setter Property="WidthRequest" Value="40"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="Margin" Value="0,-5,0,0"/>
+        </Style>
+        <Style TargetType="{x:Type simpleCore:ContentButton}">
+            <Setter Property="VerticalOptions" Value="Fill"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+            <Setter Property="HeightRequest" Value="{StaticResource ViewHeight}"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </ContentView.Resources>
+
+    <Grid
+     VerticalOptions="Center"
+     HeightRequest="{StaticResource ViewHeight}"
+     CompressedLayout.IsHeadless="True">
+        <GraphicsView
+         x:Name="backGraphicsView"
+         HeightRequest="{StaticResource ViewHeight}"
+         InputTransparent="True"
+         Background="Transparent"/>
+        <Grid
+         x:Name="buttonsGrid"
+         CompressedLayout.IsHeadless="True"
+         HeightRequest="{StaticResource ViewHeight}"
+         VerticalOptions="End" HorizontalOptions="FillAndExpand"
+         ColumnDefinitions="*, *, *">
+            <simpleCore:ContentButton
+             Grid.Column="0" Clicked="ButtonTapped"
+             SemanticProperties.Description="Ribbon page">
+                <c:TabBarIconView Source="calendario.png" Page="VistaPrincipal"/>
+            </simpleCore:ContentButton>
+            <simpleCore:ContentButton
+             Grid.Column="1" Clicked="ButtonTapped"
+             SemanticProperties.Description="Folder page">
+                <c:TabBarIconView Source="tienda.png" Page="TiendaCiclica"/>
+            </simpleCore:ContentButton>
+            <simpleCore:ContentButton
+             Grid.Column="2" Clicked="ButtonTapped"
+             SemanticProperties.Description="Home page">
+                <c:TabBarIconView Source="usuario.png" Page="PerfilUsuario"/>
+            </simpleCore:ContentButton>
+        </Grid>
+    </Grid>
+</ContentView>

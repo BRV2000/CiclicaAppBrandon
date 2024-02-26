@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.MetodosAnticonceptivos"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             xmlns:c="clr-namespace:Frontend.Views.Controles"
+             xmlns:simpleCore="clr-namespace:SimpleToolkit.Core;assembly=SimpleToolkit.Core"
+             BackgroundColor="#FBC5CA">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto, auto, *">
+            <Grid HeightRequest="50"
+                  ColumnDefinitions="auto, *, auto"
+                  Margin="0,-80,0,0">
+                <Button 
+                    x:Name="BTN_RegresarDeAnticonceptivos"
+                    Clicked="BTN_RegresarDeAnticonceptivos_Clicked"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    FontFamily="FontAwesome6" 
+                    Text="{x:Static Models:Icons.ArrowLeft}"
+                    FontSize="36"
+                    TextColor="#f4d7dc"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    Margin="5,0,0,0"
+                    BackgroundColor="Transparent">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                                Radius="10"
+                                Opacity="1"
+                                Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Label Text="Elige tu metodo anticonceptivo"
+               Margin="80,110,0,0"
+               TextColor="#b01d2e"
+               FontSize="36"
+               FontFamily="Verah"/>
+            <Grid RowDefinitions="auto, auto, auto, auto"
+                  ColumnDefinitions="auto, auto"
+                  Margin="30,230,0,-650">
+                <Grid Grid.Column="0"
+                      Grid.Row="0"
+                      Margin="20">
+                    <Label Text="Pastillas anticonceptivas"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="-23"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                        HeightRequest="120" WidthRequest="120"
+                        CornerRadius="25"
+                        x:Name="BTN_PastillasAnticonceptivas"
+                        AutomationId="1"
+                        Clicked="BTN_PastillasAnticonceptivas_Clicked"
+                        Source="pastillas_anticonceptivas.png"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,8"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="0"
+                      Margin="0">
+                    <Label Text="Inyeccion"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="-2"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                            HeightRequest="120" WidthRequest="120"
+                            CornerRadius="25"
+                            x:Name="BTN_Inyeccion"
+                            Clicked="BTN_Inyeccion_Clicked"
+                            AutomationId="2"
+                            Source="inyeccion.png"
+                            HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,6"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="1"
+                      Margin="0">
+                    <Label Text="DIU"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="10"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                        HeightRequest="120" WidthRequest="120"
+                        CornerRadius="25"
+                        x:Name="BTN_Diu"
+                        Clicked="BTN_Diu_Clicked"
+                        AutomationId="3"
+                        Source="diu.png"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,6"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="1"
+                      Margin="30">
+                    <Label Text="Parche"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="-23"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                        HeightRequest="120" WidthRequest="120"
+                        CornerRadius="25"
+                        x:Name="BTN_Parche"
+                        Clicked="BTN_Parche_Clicked"
+                        AutomationId="4"
+                        Source="parche.png"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,6"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="2"
+                      Margin="0">
+                    <Label Text="Implante"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="-2"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                        HeightRequest="120" WidthRequest="120"
+                        CornerRadius="25"
+                        x:Name="BTN_Implante"
+                        Clicked="BTN_Implante_Clicked"
+                        AutomationId="5"
+                        Source="implante.png"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                            Radius="30"
+                            Opacity="1"
+                            Offset="1,6"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="2"
+                      Margin="20">
+                    <Label Text="Anillo"
+                           TextColor="#b01d2e"
+                           FontFamily="Verah"
+                           FontSize="15"
+                           Margin="-23"
+                           HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <ImageButton 
+                        HeightRequest="120" WidthRequest="120"
+                        CornerRadius="25"
+                        x:Name="BTN_Anillo"
+                        Clicked="BTN_Anillo_Clicked"
+                        AutomationId="6"
+                        Source="anillo.png"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                            Radius="30"
+                            Opacity="1"
+                            Offset="1,6"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+            </Grid>
+            <Button 
+                HeightRequest="45" WidthRequest="160"
+                BackgroundColor="#E58C8C"
+                Text="     Historial"
+                FontSize="20"
+                TextColor="#b01d2e"
+                FontAttributes="Bold"
+                FontFamily="Verah"
+                CornerRadius="25"
+                Margin="500,750,500,-580"
+                x:Name="BTN_HistorialAnticonceptivo"
+                Clicked="BTN_HistorialAnticonceptivo_Clicked"
+                HorizontalOptions="Center" VerticalOptions="Center">
+                <Button.Shadow>
+                    <Shadow Brush="gray"
+                        Radius="15"
+                        Opacity="1"
+                        Offset="0,6"/>
+                </Button.Shadow>
+            </Button>
+            <Border 
+                Margin="0,0,110,-578"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                BackgroundColor="#b01d2e"
+                WidthRequest="40"
+                HeightRequest="40"
+                StrokeShape="RoundRectangle 25">
+                <Label
+                     FontFamily="FontAwesome6" 
+                     Text="{x:Static Models:Icons.ClockRotateLeft}"
+                     FontSize="22"
+                     Margin="8,8,0,0"
+                     TextColor="#fbc5ca"/>
+            </Border>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

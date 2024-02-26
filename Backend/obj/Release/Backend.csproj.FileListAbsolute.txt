@@ -1,0 +1,7 @@
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Release\Backend.dll.config
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Release\Backend.dll
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Release\Backend.pdb
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Release\Backend.csproj.AssemblyReference.cache
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Release\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Release\Backend.dll
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Release\Backend.pdb

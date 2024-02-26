@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.IngresarBiomarcadores"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             BackgroundColor="#FBC5CA">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto,auto"
+        Margin="10" >
+
+            <Grid Grid.Row="0"
+                  WidthRequest="60"
+                  HeightRequest="60"
+                  BackgroundColor="Transparent"
+                  HorizontalOptions="Start"
+                  Margin="-5,15,5,5">
+                <Button 
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    x:Name="BTN_RegresarDeIngresarBiomarcador"
+                    Clicked="BTN_RegresarDeIngresarBiomarcador_Clicked"
+                    FontFamily="FontAwesome6" 
+                    Text="{x:Static Models:Icons.ArrowLeft}"
+                    FontSize="36"
+                    TextColor="#f4d7dc"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                         Radius="10"
+                         Opacity="1"
+                         Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   Margin="10"
+                  >
+                <Label Text="Registro Biomarcador"   
+                         FontSize="28"
+                         FontAttributes="Bold"
+                         FontFamily="Verah"
+                         TextColor="#B01D2E"
+                         HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="2"
+                  Margin="0,-15,0,0">
+                <Border BackgroundColor="#E58C8C"
+                        WidthRequest="380"
+                        HeightRequest="550"
+                        Margin="10"
+                        StrokeShape="RoundRectangle 25">
+                    <ScrollView HeightRequest="530"
+                                >
+                        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
+                         Margin="10">
+                        
+                            <Border Grid.Row="0"
+                                StrokeShape="RoundRectangle 25"
+                                WidthRequest="350"
+                                HeightRequest="140"
+                                BackgroundColor="#F4D7DC">
+                             <Grid RowDefinitions="auto,auto,auto">
+                                <Label Grid.Row="0"
+                                      Text="Fecha del biomarcador:"
+                                      TextColor="#B01D2E"
+                                      Margin="20,20,0,0"
+                                      HorizontalOptions="Start"
+                                      HeightRequest="20"
+                                      WidthRequest="160"
+                                      FontFamily="Verah"
+                                      FontAttributes="Bold"
+                                      FontSize="16"
+                                       />
+                                <Frame Grid.Row="1"
+                                       BorderColor="#B01D2E"
+                                       Margin="10,10,0,0"
+                                       HeightRequest="40"
+                                       HorizontalOptions="Start"
+                                       WidthRequest="325"
+                                       BackgroundColor="Transparent">
+                                    <DatePicker 
+                                        Format="dd/MM/yyyy"
+                                        Margin="-10,0,0,0"
+                                        x:Name="fechaBiomarcador"
+                                        HorizontalOptions="Start"
+                                        TextColor="#B01D2E"
+                                        HeightRequest="400"
+                                        FontAttributes="Bold"
+                
+                                        WidthRequest="310"/>
+                                </Frame>
+                                <Label Grid.Row="2"
+                                        Text="DD/MM/YYY"
+                                        TextColor="#B01D2E"
+                                        Margin="20,3,0,0"
+                                        HorizontalOptions="Start"
+                                        HeightRequest="20"
+                                        WidthRequest="155"
+                                        FontFamily="Verah"
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        />
+                                </Grid>
+                                    <Border.Shadow>
+                                        <Shadow Offset="1,5"
+                                                Brush="gray"/>
+                                    </Border.Shadow>
+                    
+                            </Border>
+                            
+                        <Border Grid.Row="1"
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="350" 
+                                    HeightRequest="140"
+                                    BackgroundColor="#F4D7DC"
+                                    Margin="10">
+                                            <Grid RowDefinitions="auto,auto">
+                                                <Label Grid.Row="0"
+                                                      Text="Temperatura basal:"
+                                                      TextColor="#B01D2E"
+                                                      Margin="20,20,0,0"
+                                                      HorizontalOptions="Start"
+                                                      HeightRequest="20"
+                                                      WidthRequest="160"
+                                                      FontFamily="Verah"
+                                                      FontAttributes="Bold"
+                                                      FontSize="16"
+                                                       />
+                                                    <Frame Grid.Row="1"
+                                                       BorderColor="#B01D2E"
+                                                       Margin="10,10,0,0"
+                                                       HeightRequest="40"
+                                                       HorizontalOptions="Start"
+                                                       WidthRequest="325"
+                                                       BackgroundColor="Transparent">
+                                                        <Entry 
+                                                             HeightRequest="50"
+                                                             WidthRequest="300"
+                                                             VerticalOptions="Center"
+                                                             VerticalTextAlignment="Center"
+                                                             HorizontalTextAlignment="Center"
+                                                             HorizontalOptions="Center"
+                                                             Margin="0,10,0,0"
+                                                             Placeholder="Temperatura en 0.0 °C"
+                                                             PlaceholderColor="#B01D2E"
+                                                             TextColor="#B01D2E"
+                                                             x:Name="tempbasal"
+                                                             Keyboard="Numeric"
+                                                            MaxLength="5"
+                                                            />
+                                                    </Frame>
+                                             </Grid>
+                                                <Border.Shadow>
+                                                  <Shadow Offset="1,5"
+                                                          Brush="gray"/>      
+                                                 </Border.Shadow>       
+
+                             </Border>
+                        <Border Grid.Row="2"
+                                StrokeShape="RoundRectangle 25"
+                                WidthRequest="350" 
+                                HeightRequest="280"
+                                BackgroundColor="#F4D7DC"
+                                >
+                            <Grid RowDefinitions="auto,auto">
+                                <Label Grid.Row="0"
+                                      Text="Estado de ánimo:"
+                                      TextColor="#B01D2E"
+                                      Margin="20,20,0,0"
+                                      HorizontalOptions="Start"
+                                      HeightRequest="20"
+                                      WidthRequest="160"
+                                      FontFamily="Verah"
+                                      FontAttributes="Bold"
+                                      FontSize="16"
+                                       />
+                                <Frame Grid.Row="1"
+                                       BorderColor="#B01D2E"
+                                       Margin="10,5,0,0"
+                                       HeightRequest="220"
+                                       HorizontalOptions="Start"
+                                       WidthRequest="325"
+                                       BackgroundColor="Transparent">
+                                  <Grid RowDefinitions="auto,auto,auto"
+                                        ColumnDefinitions="auto,auto,auto"
+                                        HorizontalOptions="Center">
+                                    <Button Grid.Row="0"
+                                            Grid.Column="0"
+                                            BackgroundColor="#E58C8C"
+                                        Text="Calmada"
+                                         TextColor="#B01D2E"
+                                         x:Name="BTN_Calamada"
+                                         AutomationId="1"   
+                                        Clicked="BTN_Calamada_Clicked"
+                                        FontFamily="Verah"
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        HeightRequest="50"
+                                        WidthRequest="150"
+                                        HorizontalOptions="Start"
+                                        Margin="5"
+                                         
+                                     />
+                                    <Button Grid.Row="1"
+                                     Grid.Column="0"
+                                     Text="Feliz"
+                                            x:Name="BTN_Feliz"
+                                            AutomationId="2"
+                                            Clicked="BTN_Feliz_Clicked"
+                                            BackgroundColor="#E58C8C"
+                                             TextColor="#B01D2E"
+                                        FontFamily="Verah"
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                     HeightRequest="50"
+                                     WidthRequest="150"
+                                     HorizontalOptions="Start"
+                                        Margin="5"/>
+
+                                     <Button Grid.Row="2"
+                                        Grid.Column="0"
+                                             BackgroundColor="#E58C8C"
+                                              TextColor="#B01D2E"
+                                             x:Name="BTN_Cambios_Humor"
+                                             AutomationId="3"
+                                             Clicked="BTN_Cambios_Humor_Clicked"
+                                        Text="Cambios Humor"
+                                         FontFamily="Verah"
+                                        FontAttributes="Bold"
+                                        FontSize="16"           
+                                        HeightRequest="50"
+                                        WidthRequest="150"
+                                        HorizontalOptions="Start"
+                                        Margin="5"/>
+                                      
+                                     <Button Grid.Row="0"
+                                         Grid.Column="1"
+                                         
+                                         BackgroundColor="#E58C8C"
+                                         TextColor="#B01D2E"
+                                         Text="Triste"
+                                              x:Name="BTN_Triste"
+                                            AutomationId="4"
+                                             Clicked="BTN_Triste_Clicked"
+                                         FontFamily="Verah"
+                                         FontAttributes="Bold"
+                                         FontSize="16"
+                                         HeightRequest="50"
+                                        WidthRequest="150"
+                                         HorizontalOptions="Start"
+                                         Margin="5"/>
+                                     <Button Grid.Row="1"
+                                         Grid.Column="1"
+                                         Text="Enojada"
+                                              x:Name="BTN_Enojada"
+                                            AutomationId="5"
+                                             Clicked="BTN_Enojada_Clicked"
+                                             BackgroundColor="#E58C8C"
+                                              TextColor="#B01D2E"
+                                         FontFamily="Verah"
+                                             
+                                         FontAttributes="Bold"
+                                         FontSize="16"
+                                         HeightRequest="50"
+                                         WidthRequest="150"
+                                         HorizontalOptions="Start"
+                                         Margin="5"/>
+                                     <Button Grid.Row="2"
+                                         Grid.Column="1"
+                                             BackgroundColor="#E58C8C"
+                                              TextColor="#B01D2E"
+                                         Text="Sensible"
+                                              x:Name="BTN_Sensible"
+                                            AutomationId="6"
+                                             Clicked="BTN_Sensible_Clicked"
+                                         FontFamily="Verah"
+                                         FontAttributes="Bold"
+                                         FontSize="16"
+                                         HeightRequest="50"
+                                        WidthRequest="150"
+                                         HorizontalOptions="Start"
+                                         Margin="5"/>
+
+                                        </Grid>  
+                                </Frame>
+                            </Grid>
+                            <Border.Shadow>
+                                <Shadow Offset="1,5"
+                              Brush="gray"/>
+                            </Border.Shadow>
+
+                        </Border>
+                        <Border Grid.Row="3"
+                                StrokeShape="RoundRectangle 25"
+                                WidthRequest="350" 
+                                HeightRequest="280"
+                                BackgroundColor="#F4D7DC"
+                                    Margin="10" >
+                               
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                          Text="Cambios del cervix:"
+                                          TextColor="#B01D2E"
+                                          Margin="20,20,0,0"
+                                          HorizontalOptions="Start"
+                                          HeightRequest="20"
+                                          WidthRequest="160"
+                                          FontFamily="Verah"
+                                          FontAttributes="Bold"
+                                          FontSize="16"
+                                           />
+                                    <Frame Grid.Row="1"
+                                           BorderColor="#B01D2E"
+                                           Margin="10,5,0,0"
+                                           HeightRequest="220"
+                                           HorizontalOptions="Start"
+                                           WidthRequest="325"
+                                           BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                            HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="#E58C8C"
+                                                Text="Bajo, Cerrado"
+                                                    x:Name="BTN_bajoCerrado"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_bajoCerrado_Clicked"
+                                                    TextColor="#B01D2E"
+                                                FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                HeightRequest="50"
+                                                WidthRequest="260"
+                                                HorizontalOptions="Start"
+                                                Margin="5"/>
+                 
+             
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="0"
+                                                 Text="Alto, Abierto"
+                                                    x:Name="BTN_altoAbierto"
+                                                    AutomationId="2"
+                                                    Clicked="BTN_altoAbierto_Clicked"
+                                                        BackgroundColor="#E58C8C"
+                                                         TextColor="#B01D2E"
+                                                    FontFamily="Verah"
+                                                    FontAttributes="Bold"
+                                                    FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="260"
+                                                 HorizontalOptions="Start"
+                                                    Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="#E58C8C"
+                                                    TextColor="#B01D2E"
+                                                    Text="Medio, Semiabierto"
+                                                    x:Name="BTN_MedioSemiabierto"
+                                                    AutomationId="3"
+                                                    Clicked="BTN_MedioSemiabierto_Clicked"
+                                                     FontFamily="Verah"
+                                                    FontAttributes="Bold"
+                                                    FontSize="16"           
+                                                    HeightRequest="50"
+                                                    WidthRequest="260"
+                                                    HorizontalOptions="Start"
+                                                    Margin="5"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                            Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="4"
+                                StrokeShape="RoundRectangle 25"
+                                WidthRequest="350" 
+                                HeightRequest="280"
+                                BackgroundColor="#F4D7DC">
+                                
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                          Text="Síntomas:"
+                                          TextColor="#B01D2E"
+                                          Margin="20,20,0,0"
+                                          HorizontalOptions="Start"
+                                          HeightRequest="20"
+                                          WidthRequest="160"
+                                          FontFamily="Verah"
+                                          FontAttributes="Bold"
+                                          FontSize="16"
+                                           />
+                                    <Frame Grid.Row="1"
+                                           BorderColor="#B01D2E"
+                                           Margin="10,5,0,0"
+                                           HeightRequest="220"
+                                           HorizontalOptions="Start"
+                                           WidthRequest="325"
+                                           BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                                ColumnDefinitions="auto,auto,auto"
+                                                HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="#E58C8C"
+                                                Text="Todo bien"
+                                                    x:Name="BTN_TodoBien"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_TodoBien_Clicked"
+                                                    TextColor="#B01D2E"
+                                                FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                HeightRequest="50"
+                                                WidthRequest="150"
+                                                HorizontalOptions="Start"
+                                                Margin="5"/>
+                                             
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="0"
+                                                 Text="Cólicos"
+                                                    x:Name="BTN_Colicos"
+                                                    AutomationId="2"
+                                                    Clicked="BTN_Colicos_Clicked"
+                                                 BackgroundColor="#E58C8C"
+                                                 TextColor="#B01D2E"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                    Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                Grid.Column="0"
+                                                BackgroundColor="#E58C8C"
+                                                TextColor="#B01D2E"
+                                                Text="Dolor abdominal"
+                                                    x:Name="BTN_dolorAbdominal"
+                                                    AutomationId="3"
+                                                    Clicked="BTN_dolorAbdominal_Clicked"
+                                                 FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"           
+                                                HeightRequest="50"
+                                                WidthRequest="150"
+                                                HorizontalOptions="Start"
+                                                Margin="5"/>
+
+                                            <Button Grid.Row="0"
+                                                 Grid.Column="1"
+                                                 BackgroundColor="#E58C8C"
+                                                 TextColor="#B01D2E"
+                                                 Text="Dolor de cabeza"
+                                                    x:Name="dolorCabeza"
+                                                    AutomationId="4"
+                                                    Clicked="dolorCabeza_Clicked"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="1"
+                                                 Text="Pechos sensibles"
+                                                    x:Name="BTN_pechosSensibles"
+                                                    AutomationId="5"
+                                                    Clicked="BTN_pechosSensibles_Clicked"
+                                                 BackgroundColor="#E58C8C"
+                                                 TextColor="#B01D2E"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                            <Button Grid.Row="2"
+                                                 Grid.Column="1"
+                                                 BackgroundColor="#E58C8C"
+                                                 TextColor="#B01D2E"
+                                                 Text="Acné"
+                                                    x:Name="BTN_acne"
+                                                    AutomationId="6"
+                                                    Clicked="BTN_acne_Clicked"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                            Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="5"
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="350" 
+                                    HeightRequest="280"
+                                    BackgroundColor="#F4D7DC"
+                                    Margin="10"
+                                    >
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                          Text="Tipo de sangrado:"
+                                          TextColor="#B01D2E"
+                                          Margin="20,20,0,0"
+                                          HorizontalOptions="Start"
+                                          HeightRequest="20"
+                                          WidthRequest="160"
+                                          FontFamily="Verah"
+                                          FontAttributes="Bold"
+                                          FontSize="16"
+                                           />
+                                    <Frame Grid.Row="1"
+                                           BorderColor="#B01D2E"
+                                           Margin="10,5,0,0"
+                                           HeightRequest="220"
+                                           HorizontalOptions="Start"
+                                           WidthRequest="325"
+                                           BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                            ColumnDefinitions="auto,auto,auto"
+                                            HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                Grid.Column="0"
+                                                BackgroundColor="#E58C8C"
+                                            Text="Rojo oscuro"
+                                                    x:Name="BTN_rojoOscuro"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_rojoOscuro_Clicked"
+                                                TextColor="#B01D2E"
+                                            FontFamily="Verah"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            HeightRequest="50"
+                                            WidthRequest="150"
+                                            HorizontalOptions="Start"
+                                            Margin="5"
+                 
+                                         />
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="0"
+                                                 Text="Rosado"
+                                                    x:Name="BTN_rosado"
+                                                        AutomationId="2"
+                                                    Clicked="BTN_rosado_Clicked"
+                                                        BackgroundColor="#E58C8C"
+                                                         TextColor="#B01D2E"
+                                                    FontFamily="Verah"
+                                                    FontAttributes="Bold"
+                                                    FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                    Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                Grid.Column="0"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                Text="Negro"
+                                                    x:Name="BTN_negro"
+                                                    AutomationId="3"
+                                                    Clicked="BTN_negro_Clicked"
+                                                 FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"           
+                                                HeightRequest="50"
+                                                WidthRequest="150"
+                                                HorizontalOptions="Start"
+                                                Margin="5"/>
+
+                                            <Button Grid.Row="0"
+                                                 Grid.Column="1"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                 Text="Amarillo o Verde"
+                                                    x:Name="BTN_amarilloVerde"
+                                                    AutomationId="4"
+                                                    Clicked="BTN_amarilloVerde_Clicked"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="1"
+                                                 Text="Gris"
+                                                    x:Name="BTN_gris"
+                                                    AutomationId="5"
+                                                    Clicked="BTN_gris_Clicked"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                 FontFamily="Verah"
+                     
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                            <Button Grid.Row="2"
+                                                 Grid.Column="1"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                 Text="Marrón oscuro"
+                                                    x:Name="BTN_MarronOscuro"
+                                                    AutomationId="5"
+                                                    Clicked="BTN_MarronOscuro_Clicked"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                            Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="6"
+                                     StrokeShape="RoundRectangle 25"
+                                     WidthRequest="350" 
+                                     HeightRequest="280"
+                                     BackgroundColor="#F4D7DC"
+                                         Margin="10" >
+
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                           Text="Sangrado menstrual:"
+                                           TextColor="#B01D2E"
+                                           Margin="20,20,0,0"
+                                           HorizontalOptions="Start"
+                                           HeightRequest="20"
+                                           WidthRequest="190"
+                                           FontFamily="Verah"
+                                           
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                            />
+                                    <Frame Grid.Row="1"
+                                            BorderColor="#B01D2E"
+                                            Margin="10,5,0,0"
+                                            HeightRequest="220"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="325"
+                                            BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                                HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                 Grid.Column="0"
+                                                 BackgroundColor="#E58C8C"
+                                             Text="Escaso o ausente"
+                                                  x:Name="BTN_escasoAusente"
+                                                AutomationId="1" 
+                                                    Clicked="BTN_escasoAusente_Clicked"
+                                                 TextColor="#B01D2E"
+                                             FontFamily="Verah"
+                                             FontAttributes="Bold"
+                                             FontSize="16"
+                                             HeightRequest="50"
+                                             WidthRequest="260"
+                                             HorizontalOptions="Start"
+                                             Margin="5"/>
+
+
+                                            <Button Grid.Row="1"
+                                                  Grid.Column="0"
+                                                  Text="Moderado"
+                                                      x:Name="BTN_moderado"
+                                                    AutomationId="2" 
+                                                    Clicked="BTN_moderado_Clicked"
+                                                         BackgroundColor="#E58C8C"
+                                                          TextColor="#B01D2E"
+                                                     FontFamily="Verah"
+                                                     FontAttributes="Bold"
+                                                     FontSize="16"
+                                                  HeightRequest="50"
+                                                  WidthRequest="260"
+                                                  HorizontalOptions="Start"
+                                                     Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                 Grid.Column="0"
+                                                 BackgroundColor="#E58C8C"
+                                                 TextColor="#B01D2E"
+                                                 Text="Abundante"
+                                                      x:Name="BTN_abundante"
+                                                    Clicked="BTN_abundante_Clicked"
+                                                AutomationId="3" 
+                                                  FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"           
+                                                 HeightRequest="50"
+                                                 WidthRequest="260"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                        Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="8"
+                                     StrokeShape="RoundRectangle 25"
+                                     WidthRequest="350" 
+                                     HeightRequest="280"
+                                     BackgroundColor="#F4D7DC"
+                                         Margin="10" >
+
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                           Text="Deseo sexual:"
+                                           TextColor="#B01D2E"
+                                           Margin="20,20,0,0"
+                                           HorizontalOptions="Start"
+                                           HeightRequest="20"
+                                           WidthRequest="190"
+                                           FontFamily="Verah"
+                   
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                            />
+                                    <Frame Grid.Row="1"
+                                            BorderColor="#B01D2E"
+                                            Margin="10,5,0,0"
+                                            HeightRequest="220"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="325"
+                                            BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                                HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                 Grid.Column="0"
+                                                 BackgroundColor="#E58C8C"
+                                                 Text="Bajo"
+                                                  x:Name="BTN_bajo"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_bajo_Clicked"
+                                                 TextColor="#B01D2E"
+                                                  FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                HeightRequest="50"
+                                                WidthRequest="260"
+                                                HorizontalOptions="Start"
+                                                 Margin="5"/>
+
+
+                                            <Button Grid.Row="1"
+                                                      Grid.Column="0"
+                                                      Text="Neutro"
+                                                    x:Name="BTN_Neutro"
+                                                       AutomationId="2"
+                                                    Clicked="BTN_Neutro_Clicked"
+                                                             BackgroundColor="#E58C8C"
+                                                              TextColor="#B01D2E"
+                                                         FontFamily="Verah"
+                                                         FontAttributes="Bold"
+                                                         FontSize="16"
+                                                      HeightRequest="50"
+                                                      WidthRequest="260"
+                                                      HorizontalOptions="Start"
+                                                         Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                             Grid.Column="0"
+                                             BackgroundColor="#E58C8C"
+                                             TextColor="#B01D2E"
+                                             Text="Elevado"
+                                              x:Name="BTN_elevado"
+                                              AutomationId="3"
+                                              Clicked="BTN_elevado_Clicked"
+                                              FontFamily="Verah"
+                                             FontAttributes="Bold"
+                                             FontSize="16"           
+                                             HeightRequest="50"
+                                             WidthRequest="260"
+                                             HorizontalOptions="Start"
+                                             Margin="5"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                        Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="9"
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="350" 
+                                    HeightRequest="280"
+                                    BackgroundColor="#F4D7DC"
+                                    Margin="10"
+                                    >
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                          Text="Olor y cantidad de moco cervix:"
+                                          TextColor="#B01D2E"
+                                          Margin="20,20,0,0"
+                                          HorizontalOptions="Start"
+                                          HeightRequest="20"
+                                          WidthRequest="300"
+                                          FontFamily="Verah"
+                                          FontAttributes="Bold"
+                                          FontSize="16"
+                                           />
+                                    <Frame Grid.Row="1"
+                                           BorderColor="#B01D2E"
+                                           Margin="10,5,0,0"
+                                           HeightRequest="220"
+                                           HorizontalOptions="Start"
+                                           WidthRequest="325"
+                                           BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                                ColumnDefinitions="auto,auto,auto"
+                                                HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="#E58C8C"
+                                                Text="Ninguno, Escaso"
+                                                    x:Name="BTN_NingunoEscaso"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_NingunoEscaso_Clicked"
+                                                    TextColor="#B01D2E"
+                                                FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                HeightRequest="50"
+                                                WidthRequest="150"
+                                                HorizontalOptions="Start"
+                                                Margin="5"
+                 
+                                             />
+                                            <Button Grid.Row="1"
+                                             Grid.Column="0"
+                                             Text="Suave, moderado"
+                                                    x:Name="BTN_suaveModerado"
+                                                AutomationId="2"
+                                                    Clicked="BTN_suaveModerado_Clicked"
+                                                    BackgroundColor="#E58C8C"
+                                                     TextColor="#B01D2E"
+                                                FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                             HeightRequest="50"
+                                             WidthRequest="150"
+                                             HorizontalOptions="Start"
+                                                Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                Grid.Column="0"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                Text="Fuerte, abundante"
+                                                    x:Name="BTN_fuerteAbundante"
+                                                AutomationId="3"
+                                                    Clicked="BTN_fuerteAbundante_Clicked"
+                                                 FontFamily="Verah"
+                                                FontAttributes="Bold"
+                                                FontSize="16"           
+                                                HeightRequest="50"
+                                                WidthRequest="150"
+                                                HorizontalOptions="Start"
+                                                Margin="5"/>
+
+                                            <Button Grid.Row="0"
+                                                 Grid.Column="1"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                 Text="Suave, abundante"
+                                                    x:Name="BTN_suaveAbundate"
+                                                    AutomationId="4"
+                                                     Clicked="BTN_suaveAbundate_Clicked"
+                                                 FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                            <Button Grid.Row="1"
+                                                 Grid.Column="1"
+                                                 Text="Fuerte, moderado"
+                                                    x:Name="BTN_fuerteModerado"
+                                                    AutomationId="5"
+                                                    Clicked="BTN_fuerteModerado_Clicked"
+                                                     BackgroundColor="#E58C8C"
+                                                      TextColor="#B01D2E"
+                                                 FontFamily="Verah"
+                     
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+                                          
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                            Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="10"
+                                 StrokeShape="RoundRectangle 25"
+                                 WidthRequest="350" 
+                                 HeightRequest="280"
+                                 BackgroundColor="#F4D7DC"
+                                 Margin="10"
+                                 >
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                       Text="Otros tipo de flujo:"
+                                       TextColor="#B01D2E"
+                                       Margin="20,20,0,0"
+                                       HorizontalOptions="Start"
+                                       HeightRequest="20"
+                                       WidthRequest="300"
+                                       FontFamily="Verah"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                        />
+                                    <Frame Grid.Row="1"
+                                            BorderColor="#B01D2E"
+                                            Margin="10,5,0,0"
+                                            HeightRequest="220"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="325"
+                                            BackgroundColor="Transparent">
+                                        <Grid RowDefinitions="auto,auto,auto"
+                                                 ColumnDefinitions="auto,auto,auto"
+                                                 HorizontalOptions="Center">
+                                            <Button Grid.Row="0"
+                                                         Grid.Column="0"
+                                                         BackgroundColor="#E58C8C"
+                                                     Text="Ninguno, Escaso"
+                                                    x:Name="BTN_ningunoEscaso"
+                                                    AutomationId="1"
+                                                    Clicked="BTN_ningunoEscaso_Clicked_1"
+                                                         TextColor="#B01D2E"
+                                                     FontFamily="Verah"
+                                                     FontAttributes="Bold"
+                                                     FontSize="16"
+                                                     HeightRequest="50"
+                                                     WidthRequest="150"
+                                                     HorizontalOptions="Start"
+                                                     Margin="5"
+                 
+                                                  />
+                                            <Button Grid.Row="1"
+                                                  Grid.Column="0"
+                                                  Text="Suave, moderado"
+                                                     x:Name="BTN_suaveModeradoTF"
+                                                    AutomationId="2"
+                                                    Clicked="BTN_suaveModeradoTF_Clicked"
+                                                         BackgroundColor="#E58C8C"
+                                                          TextColor="#B01D2E"
+                                                     FontFamily="Verah"
+                                                     FontAttributes="Bold"
+                                                     FontSize="16"
+                                                  HeightRequest="50"
+                                                  WidthRequest="150"
+                                                  HorizontalOptions="Start"
+                                                     Margin="5"/>
+
+                                            <Button Grid.Row="2"
+                                                 Grid.Column="0"
+                                                      BackgroundColor="#E58C8C"
+                                                       TextColor="#B01D2E"
+                                                 Text="Fuerte, abundante"
+                                                     x:Name="BTN_fuerteAbundanteTF"
+                                                    AutomationId="3"
+                                                    Clicked="BTN_fuerteAbundanteTF_Clicked"
+                                                  FontFamily="Verah"
+                                                 FontAttributes="Bold"
+                                                 FontSize="16"           
+                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HorizontalOptions="Start"
+                                                 Margin="5"/>
+
+                                            <Button Grid.Row="0"
+                                                  Grid.Column="1"
+                                                      BackgroundColor="#E58C8C"
+                                                       TextColor="#B01D2E"
+                                                  Text="Suave, abundante"
+                                                     x:Name="BTN_suaveAbundanteTF"
+                                                    AutomationId="4"
+                                                    Clicked="BTN_suaveAbundanteTF_Clicked"
+                                                  FontFamily="Verah"
+                                                  FontAttributes="Bold"
+                                                  FontSize="16"
+                                                  HeightRequest="50"
+                                                 WidthRequest="150"
+                                                  HorizontalOptions="Start"
+                                                  Margin="5"/>
+                                            <Button Grid.Row="1"
+                                                  Grid.Column="1"
+                                                  Text="Fuerte, moderado"
+                                                     x:Name="BTN_fuerteModeradoTF"
+                                                        AutomationId="5"
+                                                    Clicked="BTN_fuerteModeradoTF_Clicked"
+                                                      BackgroundColor="#E58C8C"
+                                                       TextColor="#B01D2E"
+                                                  FontFamily="Verah"
+                                                  FontAttributes="Bold"
+                                                  FontSize="16"
+                                                  HeightRequest="50"
+                                                  WidthRequest="150"
+                                                  HorizontalOptions="Start"
+                                                  Margin="5"/>
+
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                        Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+                        <Border Grid.Row="11"
+                                 StrokeShape="RoundRectangle 25"
+                                 WidthRequest="350" 
+                                 HeightRequest="140"
+                                 BackgroundColor="#F4D7DC"
+                                 Margin="10">
+                                <Grid RowDefinitions="auto,auto">
+                                    <Label Grid.Row="0"
+                                           Text="Notas:"
+                                           TextColor="#B01D2E"
+                                           Margin="20,20,0,0"
+                                           HorizontalOptions="Start"
+                                           HeightRequest="20"
+                                           WidthRequest="160"
+                                           FontFamily="Verah"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                            />
+                                    <Frame Grid.Row="1"
+                                            BorderColor="#B01D2E"
+                                            Margin="10,10,0,0"
+                                            HeightRequest="40"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="325"
+                                            BackgroundColor="Transparent">
+                                        <Entry 
+                                                  HeightRequest="50"
+                                                  WidthRequest="300"
+                                                  VerticalOptions="Center"
+                                                  VerticalTextAlignment="Center"
+                                                  HorizontalTextAlignment="Center"
+                                                  HorizontalOptions="Center"
+                                                  Margin="0,10,0,0"
+                                                  Placeholder="Añade otros síntomas o más"
+                                                  PlaceholderColor="#B01D2E"
+                                                  TextColor="#B01D2E"
+                                                  x:Name="Notas"
+                                                  Keyboard="Text"
+                                                 MaxLength="40"
+                                                 />
+                                    </Frame>
+                                </Grid>
+                                <Border.Shadow>
+                                    <Shadow Offset="1,5"
+                                   Brush="gray"/>
+                                </Border.Shadow>
+
+                            </Border>
+
+                        </Grid>
+                    </ScrollView>
+            </Border>  
+            </Grid>
+            <Grid Grid.Row="3">
+                <Button 
+                
+                    x:Name="Btn_IngresarBiomarcador"
+                    Clicked="Btn_IngresarBiomarcador_Clicked"
+                     FontAttributes="Bold"
+                     FontFamily="Verah"
+                     WidthRequest="300"
+                     Text="GUARDAR"
+                    TextColor="#f4d7dc"
+                     VerticalOptions="Center" 
+                     CornerRadius="20" 
+                     BackgroundColor="#b01d2e"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

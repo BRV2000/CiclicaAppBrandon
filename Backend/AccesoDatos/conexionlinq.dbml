@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CiclicaApp_DB" Class="conexionlinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=appciclicadb.database.windows.net;Initial Catalog=CiclicaApp_DB;User ID=admin01" SettingsObjectName="Backend.Properties.Settings" SettingsPropertyName="CiclicaApp_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_IngresarUsuario" Method="sp_IngresarUsuario">
+    <Parameter Name="USER_NOMBRE" Parameter="uSER_NOMBRE" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="USER_PRIMER_APELLIDO" Parameter="uSER_PRIMER_APELLIDO" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="USER_SEGUNDO_APELLIDO" Parameter="uSER_SEGUNDO_APELLIDO" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="USER_CORREO" Parameter="uSER_CORREO" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="USER_CONTRASENA" Parameter="uSER_CONTRASENA" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_LoginUsuario" Method="SP_LoginUsuario">
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ObtenerSession" Method="sp_ObtenerSession">
+    <Parameter Name="session" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="sp_ObtenerSessionResult">
+      <Column Name="SESSION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION_USER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION_FECHA_INICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SESSION_FECHA_FINAL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SESSION_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_IngresarSession" Method="sp_IngresarSession">
+    <Parameter Name="SESSION_USER_ID" Parameter="sESSION_USER_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SESSION" Parameter="sESSION" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CerrarSesionesAntiguas" Method="sp_CerrarSesionesAntiguas">
+    <Parameter Name="SESSION" Parameter="sESSION" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_IngresarRegistroCicloMenstrual" Method="sp_IngresarRegistroCicloMenstrual">
+    <Parameter Name="UsuarioID" Parameter="usuarioID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaInicioCiclo" Parameter="fechaInicioCiclo" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DuracionCiclo" Parameter="duracionCiclo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DuracionMenstruacion" Parameter="duracionMenstruacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MostrarHistorialAnticonceptivos" Method="sp_MostrarHistorialAnticonceptivos">
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_MostrarHistorialAnticonceptivosResult">
+      <Column Name="ANTI_CONCEP_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NOTIFI_START_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NOTIFI_FECHA_FINAL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MostrarConsejos" Method="sp_MostrarConsejos">
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_MostrarConsejosResult">
+      <Column Name="CONSJ_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CONSJ_CONSEJO" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ActualizarNotificacion" Method="sp_ActualizarNotificacion">
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ObtenerAnticonceptivos" Method="sp_ObtenerAnticonceptivos">
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ObtenerAnticonceptivosResult">
+      <Column Name="ANTI_CONCEP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ANTI_CONCEP_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ANTI_EFECTIVIDAD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertarNotificacion" Method="sp_InsertarNotificacion">
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ANTI_CONCEP_ID" Parameter="aNTI_CONCEP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaNotifi" Parameter="fechaNotifi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraNotifi" Parameter="horaNotifi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FiltrarProductosPorColor" Method="sp_FiltrarProductosPorColor">
+    <Parameter Name="ColorId" Parameter="colorId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="sp_FiltrarProductosPorColorResult">
+      <Column Name="PROD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_NOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO" Type="System.Decimal" DbType="Decimal(20,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FiltrarProductosPorRangoDePrecios" Method="sp_FiltrarProductosPorRangoDePrecios">
+    <Parameter Name="PrecioMin" Parameter="precioMin" Type="System.Decimal" DbType="Decimal(20,2)" />
+    <Parameter Name="PrecioMax" Parameter="precioMax" Type="System.Decimal" DbType="Decimal(20,2)" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="sp_FiltrarProductosPorRangoDePreciosResult">
+      <Column Name="PROD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_NOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO" Type="System.Decimal" DbType="Decimal(20,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MostrarCategoriasProductos" Method="sp_MostrarCategoriasProductos">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="sp_MostrarCategoriasProductosResult">
+      <Column Name="CTG_PROD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CTG_PROD_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CTG_PROD_DESCRIPCION" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ObtenerProductosPorCategoriaPorID" Method="SP_ObtenerProductosPorCategoriaPorID">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoriaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="SP_ObtenerProductosPorCategoriaPorIDResult">
+      <Column Name="PROD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_SKU" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_NOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO" Type="System.Decimal" DbType="Decimal(20,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_FECHA_INGR" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_STATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_TIPO_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ObtenerHistorialCicloMenstrual" Method="sp_ObtenerHistorialCicloMenstrual">
+    <Parameter Name="UsuarioID" Parameter="usuarioID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorDescripcion" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="sp_ObtenerHistorialCicloMenstrualResult">
+      <Column Name="MENSTRUACION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USUARIO_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CICMENS_FECHA_INICIO_CICLO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CICMENS_DURACION_CICLO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CICMENS_DURACION_MENSTRUACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertarBiomarcadores" Method="spInsertarBiomarcadores">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CAM_CERVIX_ID" Parameter="cAM_CERVIX_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoAnimo_ID" Parameter="estadoAnimo_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sintomas_ID" Parameter="sintomas_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="T_SANG_ID" Parameter="t_SANG_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CANT_MENST_ID" Parameter="cANT_MENST_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MocoCervix_ID" Parameter="mocoCervix_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TipoFlujo_ID" Parameter="tipoFlujo_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_FECHA" Parameter="rEG_FECHA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="REG_NOTAS" Parameter="rEG_NOTAS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REG_TEMP_BASAL" Parameter="rEG_TEMP_BASAL" Type="System.Decimal" DbType="Decimal(4,1)" />
+    <Parameter Name="REG_LIBIDO" Parameter="rEG_LIBIDO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnId" Parameter="returnId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorMessage" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerBiomarcadores" Method="spObtenerBiomarcadores">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idReturn" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="errorMessage" Type="System.String" DbType="VarChar(255)" Direction="InOut" />
+    <ElementType Name="spObtenerBiomarcadoresResult">
+      <Column Name="REGISTRO_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reg_User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CAM_CVX_ALTURA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CAM_CVX_APERTURA_CERVX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CAM_CVX_DESCRIPCION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EST_ANIM_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="SINT_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="TSANG_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="CM_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="MC_OLOR" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="MC_CANTIDAD" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="REG_FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REG_NOTAS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REG_TEMP_BASAL" Type="System.Decimal" DbType="Decimal(4,1)" CanBeNull="true" />
+      <Column Name="REG_LIBIDO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TPO_F_OLOR" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="TPO_F_CANTIDAD" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

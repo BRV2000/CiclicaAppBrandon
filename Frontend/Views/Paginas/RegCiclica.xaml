@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.RegCiclica"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#f4d7dc">
+
+    <NavigationPage.HasNavigationBar>
+        <OnIdiom x:TypeArguments="x:Boolean">
+            <OnIdiom.Phone>true</OnIdiom.Phone>
+            <OnIdiom.Tablet>false</OnIdiom.Tablet>
+        </OnIdiom>
+    </NavigationPage.HasNavigationBar>
+
+    <VerticalStackLayout 
+    Padding="30.0"
+    VerticalOptions="Center">
+        <Grid>
+            <Frame BackgroundColor="#e58c8c" HorizontalOptions="EndAndExpand"
+                   Padding="0"
+                   Margin="0,-50,-150,0"
+                   HeightRequest="150"
+                   BorderColor="Transparent"
+                   WidthRequest="400"
+                   CornerRadius="125">
+                <Image Source="logo_ciclica2.png" HeightRequest="200" WidthRequest="250" Margin="0,0,100,0"/>
+            </Frame>
+        </Grid>
+
+
+        <VerticalStackLayout>
+            <Label Text="Registro" FontSize="35" TextColor="#b01d2e" HorizontalTextAlignment="Center" FontAttributes="Bold"  Margin="0,5,0,0"/>
+        </VerticalStackLayout>
+        <StackLayout>
+            <Entry x:Name="nombre"
+                Placeholder="Nombre" 
+                PlaceholderColor="#E58C8C"
+                VerticalOptions="Center" 
+                   TextColor="#b01d2e"
+                Keyboard="Email" 
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+        <StackLayout>
+            <Entry x:Name="priApellido"
+                Placeholder="Primer apellido" 
+                PlaceholderColor="#E58C8C" 
+                   TextColor="#b01d2e"
+                VerticalOptions="Center" 
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+
+        <StackLayout>
+            <Entry x:Name="segApellido"
+                Placeholder="Segundo apellido" 
+                PlaceholderColor="#E58C8C" 
+                   TextColor="#b01d2e"
+                VerticalOptions="Center"
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+
+        <StackLayout>
+            <Entry x:Name="correo"
+                   TextColor="#b01d2e"
+                Placeholder="Correo electronico" 
+                PlaceholderColor="#E58C8C" 
+                VerticalOptions="Center" 
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+
+        <StackLayout>
+            <Entry x:Name="Contra"
+                   TextColor="#b01d2e"
+                Placeholder="Contraseña"
+                PlaceholderColor="#E58C8C" 
+                VerticalOptions="Center" 
+                IsPassword="True"
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+
+        <StackLayout>
+            <Entry x:Name="confirmarContra"
+                   TextColor="#b01d2e"
+                Placeholder="Confirmar contraseña" 
+                PlaceholderColor="#E58C8C"
+                VerticalOptions="Center" 
+                IsPassword="True" 
+                Margin="0,5,0,0"/>
+
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Margin="0,20,0,0">
+            <Button x:Name="BtnRegistrar"
+                    Clicked="BtnRegistrar_Clicked"
+                    Text="Registrar"
+                    VerticalOptions="Center" 
+                    CornerRadius="20" 
+                    TextColor="#f4d7dc"
+                    BackgroundColor="#b01d2e" 
+                    Margin="0,2,0,0"/>
+            <Label Text="¿Ya tienes cuenta?" TextColor="#E58C8C" HorizontalTextAlignment="Center" Margin="0,50,0,0"/>
+            <Button Text="Iniciar sesion" 
+                    TextColor="#b01d2e" 
+                    Margin="0,2,0,0" 
+                    FontAttributes="Bold" 
+                    BackgroundColor="#fbc5ca"
+                    WidthRequest="120"
+                    CornerRadius="20"
+                    Clicked="ButtonIniciarSesion"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

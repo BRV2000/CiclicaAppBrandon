@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.TiendaCiclica"
+             xmlns:local="clr-namespace:Frontend.Views.Paginas"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             BackgroundColor="#fbc5ca">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto"
+              >
+            <Grid Grid.Row="0"
+                  WidthRequest="300"
+                  HeightRequest="250"
+                  Margin="40">
+                <Label Text="Productos para cada etapa de tu vida"
+                       FontSize="35"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#b01d2e"
+                       FontAttributes="Bold,Italic"
+                       FontFamily="Verah"
+                       />
+
+            </Grid>
+            <!--Vista Categorias-->
+            <Grid Grid.Row="1" RowDefinitions="auto,auto"
+                  Margin="35,0,0,0"
+                  RowSpacing="50"
+                  ColumnDefinitions="auto,auto"
+                  ColumnSpacing="25">
+                <!--Mestruacion-->
+                <Grid Grid.Row="0"
+                  WidthRequest="150"
+                  HeightRequest="150">
+                    <Label Text="Mestruacion"
+                       TextColor="#b01d2e"
+                       FontSize="17"
+                       FontFamily="Verah"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       Margin="-4"/>
+                    <ImageButton 
+                        HeightRequest="130" WidthRequest="130"
+                        CornerRadius="20"
+                        x:Name="BTN_ProductosMestrucion"
+                        Clicked="BTN_ProductosMestrucion_Clicked"
+                        Source="mestruacion.png"
+                        HorizontalOptions="Center" VerticalOptions="End">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,8"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+                <!--Aprendizaje-->
+                <Grid Grid.Row="1" Grid.Column="1"
+                  WidthRequest="150"
+                  HeightRequest="150">
+                    <Label Text="Aprendizaje"
+                       TextColor="#b01d2e"
+                       FontSize="17"
+                       FontFamily="Verah"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       Margin="-4"/>
+                   <ImageButton 
+                        HeightRequest="130" WidthRequest="130"
+                        CornerRadius="20"
+                        x:Name="BTN_ProductosAprendizaje"
+                        Clicked="BTN_ProductosAprendizaje_Clicked"  
+                        Source="aprendizaje.png"
+                        HorizontalOptions="Center" VerticalOptions="End">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,8"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+                <!--Posparto-->
+                <Grid Grid.Row="0" Grid.Column="1"
+                  WidthRequest="150"
+                  HeightRequest="150">
+                    <Label Text="Posparto"
+                       TextColor="#b01d2e"
+                       FontSize="17"
+                       FontFamily="Verah"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       Margin="-4"/>
+                    <ImageButton 
+                        HeightRequest="130" WidthRequest="130"
+                        CornerRadius="20"
+                        x:Name="BTN_ProductosPosparto"
+                        Clicked="BTN_ProductosPosparto_Clicked"
+                        Source="postparto.png"
+                        HorizontalOptions="Center" VerticalOptions="End">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,8"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                    
+                </Grid>
+                <!--Menopausia-->
+                <Grid Grid.Row="1" Grid.Column="0"
+                  WidthRequest="150"
+                  HeightRequest="150">
+                    <Label Text="Menopausia"
+                       TextColor="#b01d2e"
+                       FontSize="17"
+                       FontFamily="Verah"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       Margin="-4"/>
+                    <ImageButton 
+                        HeightRequest="130" WidthRequest="130"
+                        CornerRadius="20"
+                        x:Name="BTN_ProductosMenopausia"
+                        Clicked="BTN_ProductosMenopausia_Clicked"
+                        Source="menopausia.png"
+                        HorizontalOptions="Center" VerticalOptions="End">
+                        <ImageButton.Shadow>
+                            <Shadow Brush="gray"
+                                Radius="30"
+                                Opacity="1"
+                                Offset="1,8"/>
+                        </ImageButton.Shadow>
+                    </ImageButton>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

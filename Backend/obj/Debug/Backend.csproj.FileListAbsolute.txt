@@ -1,0 +1,28 @@
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll.config
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.pdb
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.dll
+C:\Users\Esteban\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.pdb
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll.config
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\bin\Debug\Backend.pdb
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\obj\Debug\Backend.dll
+C:\Users\Brandon Robles Varga\OneDrive\Escritorio\AplicacionCiclicaEnUso\AplicacionMovilCiclica\Backend\obj\Debug\Backend.pdb
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll.config
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\bin\Debug\Backend.pdb
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.dll
+C:\Users\Brandon Robles Varga\OneDrive\Documentos\AplicacionMovilCiclica\Backend\obj\Debug\Backend.pdb
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll.config
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\bin\Debug\Backend.dll
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\bin\Debug\Backend.pdb
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\obj\Debug\Backend.dll
+C:\Users\sebas\OneDrive\Documentos\GitHub\AplicacionMovilCiclica\Backend\obj\Debug\Backend.pdb

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Backend.Properties.Settings.CiclicaApp_DBConnectionString-Web.config Connection String" description="Backend.Properties.Settings.CiclicaApp_DBConnectionString Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=appciclicadb.database.windows.net;Initial Catalog=CiclicaApp_DB;User ID=admin01;Password=Ciclica2023" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Esteban\\OneDrive\\Documentos\\AplicacionMovilCiclica\\WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Backend.Properties.Settings.CiclicaApp_DBConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

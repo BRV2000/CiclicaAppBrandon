@@ -1,0 +1,141 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = Frontend
+build_property.ProjectDir = C:\Users\Esteban\OneDrive\Documentos\GitHub\PES-CICLICA\ProyectoCiclica\Frontend\
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Controles/TabBarIconView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Controles.TabBarIconView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Controles\TabBarIconView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Controles\TabBarIconView.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Controles/TabBarView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Controles.TabBarView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Controles\TabBarView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Controles\TabBarView.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/AnticoncepFechaYHora.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.AnticoncepFechaYHora.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\AnticoncepFechaYHora.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\AnticoncepFechaYHora.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/CatalogoProductos.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.CatalogoProductos.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\CatalogoProductos.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\CatalogoProductos.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/DescripcionProducto.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.DescripcionProducto.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\DescripcionProducto.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\DescripcionProducto.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/HistorialCicloMenstrual.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.HistorialCicloMenstrual.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\HistorialCicloMenstrual.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\HistorialCicloMenstrual.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/IngresarBiomarcadores.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.IngresarBiomarcadores.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\IngresarBiomarcadores.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\IngresarBiomarcadores.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/InsertarCicloMenstrual.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.InsertarCicloMenstrual.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\InsertarCicloMenstrual.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\InsertarCicloMenstrual.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/LogCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.LogCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\LogCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\LogCiclica.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/MetodosAnticonceptivos.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.MetodosAnticonceptivos.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\MetodosAnticonceptivos.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\MetodosAnticonceptivos.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/MostrarBiomarcadores.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.MostrarBiomarcadores.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\MostrarBiomarcadores.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\MostrarBiomarcadores.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/PagHistorialAnticoncep.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.PagHistorialAnticoncep.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\PagHistorialAnticoncep.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\PagHistorialAnticoncep.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/PagObtenerElMetodoAnticoncepEnUso.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.PagObtenerElMetodoAnticoncepEnUso.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\PagObtenerElMetodoAnticoncepEnUso.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\PagObtenerElMetodoAnticoncepEnUso.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/PerfilUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.PerfilUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\PerfilUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\PerfilUsuario.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/RegCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.RegCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\RegCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\RegCiclica.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/TiendaCiclica.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.TiendaCiclica.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\TiendaCiclica.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\TiendaCiclica.xaml
+
+[C:/Users/Esteban/OneDrive/Documentos/GitHub/PES-CICLICA/ProyectoCiclica/Frontend/Views/Paginas/VistaPrincipal.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend.Views.Paginas.VistaPrincipal.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Paginas\VistaPrincipal.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Paginas\VistaPrincipal.xaml

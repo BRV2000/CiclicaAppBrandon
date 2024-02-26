@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.AnticoncepFechaYHora"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             xmlns:c="clr-namespace:Frontend.Views.Controles"
+             xmlns:simpleCore="clr-namespace:SimpleToolkit.Core;assembly=SimpleToolkit.Core"
+             BackgroundColor="#FBC5CA">
+    <VerticalStackLayout>
+        <Grid RowDefinitions="auto, auto, auto, auto"
+              Margin="20,15,20,0">
+            <!-- Flecha de regreso -->
+            <Grid Grid.Row="0"
+                  Margin="0,30,0,0">
+                <Button 
+                    x:Name="BTN_RegresarDeFechaYHora"
+                    Clicked="BTN_RegresarDeFechaYHora_Clicked"
+                    FontFamily="FontAwesome6" 
+                    Text="{x:Static Models:Icons.ArrowLeft}"
+                    FontSize="36"
+                    TextColor="#f4d7dc"
+                    Margin="0,-20,0,0"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                            Radius="10"
+                            Opacity="1"
+                            Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                  Padding="20"
+                  Margin="0,150,0,30">
+                <Label x:Name="NombreAnticoncepVistaFechaHora"
+                    Text="Aqui va el nombre del metodo anticonceptivo"
+                    FontSize="26"
+                    FontFamily="Verah"
+                    FontAttributes="Bold"
+                    TextColor="#b01d2e"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    Margin="0,-150,0,0" />
+
+                <Border
+                    BackgroundColor="#F4D7DC"
+                    Margin="0,-65,0,0"
+                    HeightRequest="133"
+                    WidthRequest="315"
+                    StrokeShape="RoundRectangle 25">
+                    <Label
+                        Text="Seleccione la fecha de inicio del metodo anticonceptivo"
+                        FontSize="14"
+                        TextColor="#b01d2e"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="0,10,0,0"/>
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="gray"
+                            Radius="50"
+                            Opacity="1"
+                            Offset="0,8"/>
+                    </Border.Shadow>
+                </Border>
+                <Frame 
+                    BackgroundColor="Transparent"
+                    BorderColor="#b01d2e"
+                    Margin="95,10,95,25"
+                    Padding="10">
+                    <DatePicker x:Name="DatePicker_Fecha"
+                        TextColor="#b01d2e"
+                        Format="dd/MM/yyyy"
+                        FontAttributes="Bold" FontSize="16"
+                        CharacterSpacing="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"/>
+                </Frame>
+                
+            </Grid>
+            <Grid Grid.Row="2">
+                <Frame 
+                    BackgroundColor="Transparent"
+                    Margin="35,-30,35,20"
+                    Padding="10"
+                    BorderColor="Transparent">
+                    <Label
+                        Text="¿A qué hora quieres recibir tu recordatorio?"
+                        FontSize="14"
+                        TextColor="#b01d2e"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Center" />
+                </Frame>
+                <!-- Hora -->
+                <Frame Margin="25,-80,25,0"
+                    BackgroundColor="#F4D7DC"
+                       HeightRequest="163"
+                       WidthRequest="280"
+                       HasShadow="True"
+                       CornerRadius="28" 
+                       BorderColor="#F4D7DC">
+                    <Grid Grid.Column="0">
+                        <Frame BorderColor="#b01d2e"
+                                   BackgroundColor="Transparent"
+                                   Margin="0,0,1,0">
+                            <TimePicker 
+                                x:Name="TimePicker_Hora"
+                                TextColor="#b01d2e"
+                                Format="hh : mm"
+                                FontSize="60"
+                                HeightRequest="100"
+                                WidthRequest="220"/>
+                        </Frame>
+                    </Grid>
+                </Frame>
+                <Grid Grid.Row="3">
+                    <Border Margin="20,250,20,0"
+                            WidthRequest="130"
+                            HeightRequest="55"
+                            StrokeShape="RoundRectangle 30">
+                        <Button
+                            Text="Guardar"
+                            x:Name="BTN_GuardarNotifi"
+                            Clicked="BTN_GuardarNotifi_Clicked"
+                            BackgroundColor="#E58C8C"
+                            TextColor="#b01d2e"
+                            FontSize="20"
+                            CornerRadius="25"
+                            Margin="0,0,0,0"
+                            BorderColor="#E58C8C"/>
+                    </Border>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

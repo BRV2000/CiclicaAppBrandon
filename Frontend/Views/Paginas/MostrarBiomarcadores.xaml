@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.Paginas.MostrarBiomarcadores"
+             xmlns:Models="clr-namespace:Frontend.Models"
+             BackgroundColor="#FBC5CA">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto,auto"
+              Margin="10">
+            <Grid Grid.Row="0"
+                  WidthRequest="60"
+                  HeightRequest="60"
+                  BackgroundColor="Transparent"
+                  HorizontalOptions="Start"
+                  Margin="-5,15,5,5">
+                <Button 
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        x:Name="BTN_RegresarDeBiomarcadores"
+                        Clicked="BTN_RegresarDeBiomarcadores_Clicked_2"
+                        FontFamily="FontAwesome6" 
+                        Text="{x:Static Models:Icons.ArrowLeft}"
+                        FontSize="36"
+                        TextColor="#f4d7dc"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent">
+                    <Button.Shadow>
+                        <Shadow Brush="gray"
+                                 Radius="10"
+                                 Opacity="1"
+                                 Offset="1,6"/>
+                    </Button.Shadow>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1"
+                  HeightRequest="100"
+                  WidthRequest="300"
+                  BackgroundColor="Transparent"
+                  RowDefinitions="auto,auto,auto">
+                <Label Grid.Row="0"
+                       Text="Biomarcadores"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       FontFamily="Verah"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#B01D2E"/>
+                <Label Grid.Row="1"
+                       Text="Fecha hoy:"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       FontFamily="Verah"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#B01D2E"/>
+                <Frame Grid.Row="2"
+                       BorderColor="#B01D2E"
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       WidthRequest="150"
+                       Margin="10"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <DatePicker Format="dd/MMM/yyyy"
+                                IsEnabled="False"
+                                HeightRequest="40"
+                                WidthRequest="90"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                FontFamily="Verah"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                TextColor="#B01D2E"/>
+                </Frame>
+                </Grid>
+            <CollectionView Grid.Row="2"
+                            HeightRequest="520"
+                            WidthRequest="350"
+                            Margin="20"
+                            x:Name="DatosDeBiomarcadores"
+                            ItemsSource="{Binding historialBiomarcadores}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ScrollView HeightRequest="580"
+                                    WidthRequest="350"
+                                    BackgroundColor="Transparent">
+                                <Border StrokeShape="RoundRectangle 25"
+                                        WidthRequest="350"
+                                        HeightRequest="550"
+                                        VerticalOptions="Start"
+                                        BackgroundColor="#F4D7DC"
+                                        Margin="0,0,0,0">
+                                    <Grid RowDefinitions="auto,auto,auto,
+                                          auto,auto,auto,auto,auto,
+                                          auto,auto,auto,auto,
+                                          auto,auto,auto"
+                                            ColumnDefinitions="auto,auto">
+                                        <Label Grid.Row="0"
+                                               
+                                               Text="Fecha biomarcador:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HorizontalOptions="Start"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="1"
+                                           Text="Notas:"
+                                            TextColor="#B01D2E"
+                                           Margin="10,10,0,0"
+                                           HeightRequest="20"
+                                           WidthRequest="130"
+                                           HorizontalOptions="Start"
+                                        
+                                           FontFamily="Verah"
+                                           FontAttributes="Bold"
+                                           FontSize="16"/>
+                                        <Label Grid.Row="2"
+                                               Text="Temperatura basal:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HorizontalOptions="Start"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="3"
+                                               Text="Deseo Sexual:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HorizontalOptions="Start"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="4"
+                                               Text="Altura cervix:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               HorizontalOptions="Start"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="5"
+                                               Text="Apertura cervix:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               HorizontalOptions="Start"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="6"
+                                               Text="Descripción cervix:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HorizontalOptions="Start"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="7"
+                                               Text="Estado de animo:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               HorizontalOptions="Start"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="8"
+                                               Text="Sintoma:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               HorizontalOptions="Start"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="9"
+                                               Text="tipo de sangrado:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HorizontalOptions="Start"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="10"
+                                               Text="Cantidad menstruación:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               HorizontalOptions="Start"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="11"
+                                               Text="Olor moco cervix:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               HorizontalOptions="Start"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="12"
+                                               Text="Cantidad moco cervix:"
+                                                TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               HorizontalOptions="Start"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="13"
+                                               Text="Cantidad de flujo:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               WidthRequest="155"
+                                               HorizontalOptions="Start"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Grid.Row="14"
+                                               Text="Olor flujo:"
+                                               TextColor="#B01D2E"
+                                               Margin="10,10,0,0"
+                                               HeightRequest="20"
+                                               HorizontalOptions="Start"
+                                               WidthRequest="155"
+                                               FontFamily="Verah"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+
+                                        <Label Grid.Column="1"
+                                               Grid.Row="0"
+                                               x:Name="FechaBiomarcador"
+                                           Text="{Binding bioFecha, StringFormat='{0: dd/MMM/yyyy}' }"
+                                           TextColor="#B01D2E"
+                                           Margin="0,10,0,0"
+                                          VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                           HorizontalOptions="Center"
+                                          />
+                                        
+                                        <Label Grid.Column="1"
+                                               Grid.Row="1"
+                                               Text="{Binding bioNotas}"
+                                               WidthRequest="200"
+                                               HeightRequest="50"
+                                               TextColor="#B01D2E"
+                                                HorizontalTextAlignment="Start"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="Start"
+                                              />
+                                        
+                                        <Label Grid.Column="1"
+                                               Grid.Row="2"
+                                               Text="{Binding bioTemp_Basal}"
+                                               TextColor="#B01D2E"
+                                             
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                               
+                                               />
+
+                                        <Label Grid.Column="1"
+                                               Grid.Row="3"
+                                               Text="{Binding bioLibido }"
+                                               TextColor="#B01D2E"
+                                              
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                               />
+                                        <Label Grid.Column="1"
+                                               Grid.Row="4"
+                                               Text="{Binding cambioCervix_Altura }"
+                                               TextColor="#B01D2E"
+                                            
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                              />
+                                        <Label Grid.Column="1"
+                                               Grid.Row="5"
+                                               Text="{Binding cambioCervix_Apertura }"
+                                               TextColor="#B01D2E"
+                                              
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"
+                                               />
+                                        <Label Grid.Column="1"
+                                                Grid.Row="6"
+                                                Text="{Binding cambioCervix_Descripcion }"
+                                                TextColor="#B01D2E"
+                                                 WidthRequest="200"
+                                                HeightRequest="60"
+
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Start"
+                                                />
+                                        <Label Grid.Column="1"
+                                                Grid.Row="7"
+                                                Text="{Binding EstadoAnimo_Nombre }"
+                                                TextColor="#B01D2E"
+                                                
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Center"
+                                                />
+                                        <Label Grid.Column="1"
+                                                Grid.Row="8"
+                                                Text="{Binding Sint_Nombre }"
+                                                TextColor="#B01D2E"
+                                               
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Center"/>
+
+                                        <Label Grid.Column="1"
+                                                Grid.Row="9"
+                                                Text="{Binding T_Sang_Nombre }"
+                                                TextColor="#B01D2E"
+                                                
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Center"
+                                                
+                                                />
+                                        <Label Grid.Column="1"
+                                                 Grid.Row="10"
+                                                 Text="{Binding Cant_Menstruacion_Nombre }"
+                                                 TextColor="#B01D2E"
+                                                 
+                                                 VerticalTextAlignment="Center"
+                                                 HorizontalTextAlignment="Center"
+                                                 />
+                                        <Label Grid.Column="1"
+                                                 Grid.Row="11"
+                                                 Text="{Binding MocoC_Olor }"
+                                                 TextColor="#B01D2E"
+                                                
+                                                 VerticalTextAlignment="Center"
+                                                 HorizontalTextAlignment="Center"
+                                                 />
+                                        <Label Grid.Column="1"
+                                                 Grid.Row="12"
+                                                 Text="{Binding MocoC_Cantidad }"
+                                                 TextColor="#B01D2E"
+                                                 
+                                                 VerticalTextAlignment="Center"
+                                                 HorizontalTextAlignment="Center"
+                                                 />
+                                        <Label Grid.Column="1"
+                                              Grid.Row="13"
+                                              Text="{Binding TipoF_Cantidad }"
+                                              TextColor="#B01D2E"
+                                              
+                                              VerticalTextAlignment="Center"
+                                              HorizontalTextAlignment="Center"
+                                             />
+                                        <Label Grid.Column="1"
+                                                  Grid.Row="14"
+                                                  Text="{Binding TipoF_Olor }"
+                                                  TextColor="#B01D2E"
+                                                 
+                                                  VerticalTextAlignment="Center"
+                                                  HorizontalTextAlignment="Center"
+                                                  />
+                                    </Grid>
+                                        
+                                    <Border.Shadow>
+                                        <Shadow  
+                                        Brush="gray"
+                                        Radius="5"
+                                        Opacity="1"
+                                        Offset="1,5"/>
+                                    </Border.Shadow>
+                                </Border>
+                            </ScrollView>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                 
+            </CollectionView>
+            <Grid Grid.Row="3">
+                <Button 
+                    WidthRequest="300"
+                    x:Name="Btn_RegistroBiomarcadores"
+                     Clicked="Btn_RegistroBiomarcadores_Clicked"
+                     FontAttributes="Bold"
+                     FontFamily="Verah"
+                    TextColor="#f4d7dc"
+                     Text="Registrar un biomarcador" 
+                     FontSize="16"
+                     VerticalOptions="Center" 
+                     CornerRadius="20" 
+                     BackgroundColor="#b01d2e"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>
